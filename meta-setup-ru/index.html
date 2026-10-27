@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>TOTALFIT NOAH — подготовка к рекламе (RU)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#14161a;--muted:#5b6170;--line:#e3e6ec;
+  --accent:#0a66ff;--accent-soft:#e8f0ff;--ok:#119a55;--ok-soft:#e5f6ec;
+  --warn:#b54708;--warn-soft:#fff4e5;--bad:#c4271c;--bad-soft:#fdecea;
+  --meta-side:#f0f2f5;--radius:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(244,245,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:.02em;font-size:15px}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:0}
+.prog{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.lang{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.lang button{border:0;background:none;padding:6px 10px;font:600 13px Inter,sans-serif;cursor:pointer;color:var(--muted)}
+.lang button.on{background:var(--ink);color:#fff}
+.hero{padding:28px 0 8px}
+.hero h1{font-size:clamp(26px,6vw,36px);line-height:1.15;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{margin:0 0 6px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.fact b{display:block;font-size:18px}
+.fact span{font-size:13px;color:var(--muted)}
+.note{border-radius:12px;padding:12px 14px;margin:14px 0;font-size:15px}
+.note.warn{background:var(--warn-soft);color:#6b2a03}
+.note.info{background:var(--accent-soft);color:#0b3a8c}
+.note.ok{background:var(--ok-soft);color:#0b5232}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin:14px 0;overflow:hidden}
+.step.done{border-color:#9fd9b9}
+.step-h{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--accent-soft);color:var(--accent)}
+.step.done .num{background:var(--ok);color:#fff}
+.step-h h2{font-size:17px;margin:0;line-height:1.3;flex:1}
+.step-h .t{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.chev{transition:transform .2s;color:var(--muted)}
+.step.open .chev{transform:rotate(180deg)}
+.step-b{display:none;padding:0 16px 18px}
+.step.open .step-b{display:block}
+.step-b ol,.step-b ul{padding-left:22px;margin:8px 0}
+.step-b li{margin:6px 0}
+.btnlbl{display:inline-block;background:#eef1f6;border:1px solid #d8dde6;border-radius:6px;padding:0 6px;font-weight:600;font-size:14px;white-space:nowrap}
+.val{font-family:ui-monospace,Consolas,monospace;background:#eef1f6;border-radius:6px;padding:1px 6px;font-size:14px}
+.mark{display:flex;align-items:center;gap:10px;margin-top:14px;padding:12px 14px;border:1px dashed #b9c2d0;border-radius:12px;cursor:pointer;font-weight:600}
+.mark input{width:20px;height:20px;accent-color:var(--ok)}
+.copy{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#0f1726;color:#fff;border-radius:12px;padding:12px 14px;margin:10px 0}
+.copy code{font:600 15px ui-monospace,Consolas,monospace;word-break:break-all;flex:1;min-width:0}
+.copy button{border:0;border-radius:8px;padding:8px 12px;font:600 14px Inter,sans-serif;background:#fff;color:#0f1726;cursor:pointer}
+a{color:var(--accent)}
+.golink{display:inline-block;margin:6px 0;padding:10px 14px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600}
+/* schematic screens */
+.screen{border:1px solid #cfd5df;border-radius:12px;overflow:hidden;margin:14px 0;background:#fff;font-size:13px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.screen .bar{background:#e9ecf1;padding:6px 10px;display:flex;gap:6px;align-items:center;font-size:11px;color:#596172}
+.screen .bar i{width:8px;height:8px;border-radius:50%;background:#c3c9d3;display:inline-block}
+.screen .bar span{margin-left:6px;background:#fff;border-radius:6px;padding:2px 8px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sc{display:flex;min-height:150px}
+.side{width:38%;max-width:200px;background:var(--meta-side);padding:10px 8px;border-right:1px solid #e1e5eb}
+.side div{padding:5px 8px;border-radius:7px;color:#3d4350;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side .g{font-weight:700;color:#1c1e21;margin-top:6px}
+.side .on{background:#1c2b33;color:#fff;font-weight:600}
+.main{flex:1;padding:12px;min-width:0}
+.main .h{font-weight:700;font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mbtn{background:#0866ff;color:#fff;border-radius:7px;padding:4px 9px;font-weight:600;font-size:12px;white-space:nowrap}
+.mbtn.ghost{background:#fff;color:#1c1e21;border:1px solid #cbd2d9}
+.row{border:1px solid #e1e5eb;border-radius:8px;padding:8px;margin:6px 0;display:flex;justify-content:space-between;gap:8px}
+.field{border:1px solid #cbd2d9;border-radius:7px;padding:6px 8px;margin:3px 0 8px;color:#1c1e21;background:#fff}
+.lbl{font-weight:600;font-size:12px;color:#3d4350}
+.hl{outline:3px solid #ff3b30;outline-offset:2px;border-radius:7px;position:relative}
+.tag{font-size:11px;font-weight:700;color:#ff3b30;margin-left:4px}
+.opt{border:1px solid #e1e5eb;border-radius:8px;padding:8px;margin:6px 0}
+.opt b{display:block;font-size:13px}
+.opt span{color:#606770;font-size:12px}
+.toggle{display:inline-block;width:30px;height:17px;border-radius:9px;background:#0866ff;vertical-align:middle;position:relative;margin-right:6px}
+.toggle:after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+.phone{max-width:260px;margin:14px auto;border:1px solid #cfd5df;border-radius:22px;padding:12px;background:#fff;font-size:13px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.phone .pr{padding:8px 10px;border-bottom:1px solid #eef0f3;display:flex;justify-content:space-between}
+.phone .pr:last-child{border:0}
+.cap{font-size:12px;color:var(--muted);text-align:center;margin-top:-6px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dd>div{border-radius:12px;padding:12px 14px}
+.dd .y{background:var(--ok-soft)}
+.dd .n{background:var(--bad-soft)}
+.dd h3{margin:0 0 6px;font-size:15px}
+.dd ul{margin:0;padding-left:18px;font-size:14px}
+.dd li{margin:4px 0}
+section h2.sec{font-size:20px;margin:30px 0 6px}
+footer{color:var(--muted);font-size:13px;margin-top:30px;text-align:center}
+html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
+@media (max-width:560px){
+  .facts{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .fact{padding:8px}
+  .fact b{font-size:15px}
+  .dd{grid-template-columns:1fr}
+  .step-h .t{display:none}
+  .side{width:34%}
+  .screen{font-size:12px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="brand">TOTALFIT NOAH<small data-l="en">Meta Ads setup</small><small data-l="ru">Подготовка к рекламе в Meta</small></div>
+  <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+  
+</div></header>
+
+<main class="wrap">
+<div class="hero">
+  <h1 data-l="en">Get ready for Instagram &amp; Facebook ads — 8 simple steps</h1>
+  <h1 data-l="ru">Подготовка к рекламе в Instagram и Facebook — 8 простых шагов</h1>
+  <p data-l="en">Follow the steps in order. When a step is done, tick it — your progress is saved on this device. At the end you give us access, and we set up and run the ads. You never share any passwords with us.</p>
+  <p data-l="ru">Идите по шагам по порядку. Сделали шаг — поставьте галочку, прогресс сохранится на этом устройстве. В конце вы даёте нам доступ, и рекламу настраиваем и ведём мы. Пароли нам не передаются никогда.</p>
+  <div class="facts">
+    <div class="fact"><b>~40 min</b><span data-l="en">total time</span><span data-l="ru">всего времени</span></div>
+    <div class="fact"><b data-l="en">Computer</b><b data-l="ru">Компьютер</b><span data-l="en">steps 3–8</span><span data-l="ru">шаги 3–8</span></div>
+    <div class="fact"><b data-l="en">Owner</b><b data-l="ru">Владелец</b><span data-l="en">does it personally</span><span data-l="ru">делает сам</span></div>
+  </div>
+  <div class="note info" data-l="en"><b>Who should do this:</b> the person who manages the TOTALFIT NOAH Facebook Page, using <b>their own personal Facebook profile</b> (real name, used for a long time). Please do not create a new Facebook profile for this — new profiles are often blocked from advertising.</div>
+  <div class="note info" data-l="ru"><b>Кто делает:</b> человек, который управляет страницей TOTALFIT NOAH в Facebook, со <b>своего личного профиля Facebook</b> (настоящее имя, давно пользуется). Новый профиль под это не заводите — новые профили часто блокируют для рекламы.</div>
+</div>
+
+<section>
+<h2 class="sec" data-l="en">Safety rules (read once — 1 minute)</h2>
+<h2 class="sec" data-l="ru">Правила безопасности (прочитать один раз — 1 минута)</h2>
+<div class="dd">
+  <div class="y"><h3 data-l="en">✓ Do</h3><h3 data-l="ru">✓ Делайте</h3>
+    <ul data-l="en">
+      <li>Work from your usual computer and home/office internet in Japan</li>
+      <li>Turn on two-factor authentication (step 0)</li>
+      <li>Use real business data: name, address, phone, website</li>
+      <li>Add a second trusted person as admin later (backup)</li>
+    </ul>
+    <ul data-l="ru">
+      <li>Работайте со своего обычного компьютера и домашнего/офисного интернета в Японии</li>
+      <li>Включите двухэтапный вход (шаг 0)</li>
+      <li>Указывайте настоящие данные клуба: название, адрес, телефон, сайт</li>
+      <li>Позже добавьте второго доверенного человека админом (запасной вход)</li>
+    </ul>
+  </div>
+  <div class="n"><h3 data-l="en">✕ Don't</h3><h3 data-l="ru">✕ Не делайте</h3>
+    <ul data-l="en">
+      <li>Don't send anyone your passwords or login codes — we never ask for them</li>
+      <li>Don't use a VPN while doing these steps</li>
+      <li>Don't press <b>“Boost post”</b> in Instagram until we finish setup — it creates a separate ad account</li>
+      <li>Don't add a card that was declined before</li>
+    </ul>
+    <ul data-l="ru">
+      <li>Никому не отправляйте пароли и коды входа — мы их никогда не просим</li>
+      <li>Не включайте VPN, пока делаете эти шаги</li>
+      <li>Не нажимайте <b>«Продвигать»</b> в Instagram, пока мы не закончим настройку — это создаёт отдельный рекламный аккаунт</li>
+      <li>Не добавляйте карту, по которой раньше были отказы</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section id="steps">
+<h2 class="sec" data-l="en">Steps</h2>
+<h2 class="sec" data-l="ru">Шаги</h2>
+
+<!-- STEP 0 -->
+<article class="step" data-step="0">
+  <div class="step-h"><div class="num">0</div>
+    <h2><span data-l="en">Turn on two-factor authentication on Facebook</span><span data-l="ru">Включите двухэтапный вход в Facebook</span></h2>
+    <span class="t">3 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <ol data-l="en">
+      <li>Open <a href="https://accountscenter.facebook.com/password_and_security" target="_blank" rel="noopener">Accounts Center → Password and security</a>.</li>
+      <li>Click <span class="btnlbl">Two-factor authentication</span> → choose your Facebook profile.</li>
+      <li>Choose <b>Authentication app</b> (Google Authenticator, Microsoft Authenticator) or <b>SMS</b> and follow the instructions.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Откройте <a href="https://accountscenter.facebook.com/password_and_security" target="_blank" rel="noopener">Центр аккаунтов → Пароль и безопасность</a>.</li>
+      <li>Нажмите <span class="btnlbl">Двухфакторная аутентификация</span> → выберите свой профиль Facebook.</li>
+      <li>Выберите <b>приложение-аутентификатор</b> (Google Authenticator, Microsoft Authenticator) или <b>SMS</b> и следуйте подсказкам.</li>
+    </ol>
+    <div class="note ok" data-l="en">Meta requires this for business portfolio admins. It also protects the account from being taken over.</div>
+    <div class="note ok" data-l="ru">Meta требует этого от админов бизнес-портфолио. Заодно это защищает аккаунт от взлома.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 1 -->
+<article class="step" data-step="1">
+  <div class="step-h"><div class="num">1</div>
+    <h2><span data-l="en">Instagram: switch to a Business account</span><span data-l="ru">Instagram: переключите на бизнес-аккаунт</span></h2>
+    <span class="t">3 min · 📱</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">In the Instagram app on your phone, logged in as <b>@totalfit.noahgym</b>:</p>
+    <p data-l="ru">В приложении Instagram на телефоне, в аккаунте <b>@totalfit.noahgym</b>:</p>
+    <ol data-l="en">
+      <li>Go to your profile → tap <span class="btnlbl">☰</span> (top right).</li>
+      <li>Tap <span class="btnlbl">Account type and tools</span> → <span class="btnlbl">Switch to professional account</span>.</li>
+      <li>Category: <b>Gym/Physical Fitness Center</b> → choose <b>Business</b> (not Creator).</li>
+      <li>Check contact info: email, phone, address in Yokohama.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Откройте свой профиль → нажмите <span class="btnlbl">☰</span> (справа вверху).</li>
+      <li>Нажмите <span class="btnlbl">Тип аккаунта и инструменты</span> → <span class="btnlbl">Переключиться на профессиональный аккаунт</span>.</li>
+      <li>Категория: <b>Спортзал / фитнес-центр</b> → выберите <b>Бизнес</b> (не «Автор»).</li>
+      <li>Проверьте контакты: почта, телефон, адрес в Йокогаме.</li>
+    </ol>
+    <div class="phone">
+      <div class="pr"><b>Settings and activity</b></div>
+      <div class="pr">Accounts Center</div>
+      <div class="pr">Notifications</div>
+      <div class="pr hl">Account type and tools <span class="tag">TAP</span></div>
+      <div class="pr">Help</div>
+    </div>
+    <p class="cap" data-l="en">If you already see “Professional dashboard” on your profile and the type is Business — this step is already done.</p>
+    <p class="cap" data-l="ru">Если в профиле уже есть «Профессиональная панель» и тип «Бизнес» — шаг уже выполнен.</p>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 2 -->
+<article class="step" data-step="2">
+  <div class="step-h"><div class="num">2</div>
+    <h2><span data-l="en">Connect Instagram to the Facebook Page</span><span data-l="ru">Свяжите Instagram со страницей Facebook</span></h2>
+    <span class="t">3 min · 📱</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <ol data-l="en">
+      <li>In Instagram: your profile → <span class="btnlbl">Edit profile</span>.</li>
+      <li>Find <span class="btnlbl">Page</span> (under “Public business information”) → <span class="btnlbl">Connect existing Page</span>.</li>
+      <li>Log in with your personal Facebook if asked → choose <b>TOTALFIT Noah</b> → <span class="btnlbl">Done</span>.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>В Instagram: профиль → <span class="btnlbl">Редактировать профиль</span>.</li>
+      <li>Найдите <span class="btnlbl">Страница</span> (в блоке «Общедоступная информация о компании») → <span class="btnlbl">Подключить существующую Страницу</span>.</li>
+      <li>Если попросит — войдите в свой личный Facebook → выберите <b>TOTALFIT Noah</b> → <span class="btnlbl">Готово</span>.</li>
+    </ol>
+    <div class="note info" data-l="en">Other way (computer): open the TOTALFIT Noah Facebook Page → switch into it → <b>Settings → Linked accounts → Instagram → Connect</b>.</div>
+    <div class="note info" data-l="ru">Другой путь (с компьютера): откройте страницу TOTALFIT Noah в Facebook → переключитесь на неё → <b>Настройки → Связанные аккаунты → Instagram → Подключить</b>.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 3 -->
+<article class="step" data-step="3">
+  <div class="step-h"><div class="num">3</div>
+    <h2><span data-l="en">Create a Business portfolio</span><span data-l="ru">Создайте бизнес-портфолио</span></h2>
+    <span class="t">5 min · 💻</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">A business portfolio is a free “company folder” in Meta. Your Page, Instagram and ad account live there, and <b>you stay the owner</b>.</p>
+    <p data-l="ru">Бизнес-портфолио — бесплатная «папка компании» в Meta. В ней лежат страница, Instagram и рекламный аккаунт, и <b>владельцем остаётесь вы</b>.</p>
+    <a class="golink" href="https://business.facebook.com/overview" target="_blank" rel="noopener"><span data-l="en">Open business.facebook.com →</span><span data-l="ru">Открыть business.facebook.com →</span></a>
+    <ol data-l="en">
+      <li>Click <span class="btnlbl">Create a business portfolio</span> (or <span class="btnlbl">Create an account</span>).</li>
+      <li>Business portfolio name: <span class="val">TOTALFIT NOAH</span></li>
+      <li>Your first and last name — as in your Facebook profile.</li>
+      <li>Business email: <span class="val">totalfit.noah@gmail.com</span> → confirm the email from the letter Meta sends.</li>
+      <li>Then open <b>Settings → Business info</b> and fill in: address <span class="val">1491-1 Iijima-cho, Sakae-ku, Yokohama, Kanagawa 244-0842</span>, phone, website <span class="val">totalfitnoah.com</span>.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Нажмите <span class="btnlbl">Создать бизнес-портфолио</span> (или <span class="btnlbl">Создать аккаунт</span>).</li>
+      <li>Название портфолио: <span class="val">TOTALFIT NOAH</span></li>
+      <li>Имя и фамилия — как в вашем профиле Facebook.</li>
+      <li>Рабочая почта: <span class="val">totalfit.noah@gmail.com</span> → подтвердите её по письму от Meta.</li>
+      <li>Затем откройте <b>Настройки → Информация о компании</b> и заполните: адрес <span class="val">1491-1 Iijima-cho, Sakae-ku, Yokohama, Kanagawa 244-0842</span>, телефон, сайт <span class="val">totalfitnoah.com</span>.</li>
+    </ol>
+    <div class="note warn" data-l="en">If a TOTALFIT NOAH business portfolio already exists (someone created it before) — <b>do not create a second one</b>. Just use the existing one and go to step 4.</div>
+    <div class="note warn" data-l="ru">Если портфолио TOTALFIT NOAH уже есть (кто-то создавал раньше) — <b>второе не создавайте</b>. Используйте существующее и переходите к шагу 4.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 4 -->
+<article class="step" data-step="4">
+  <div class="step-h"><div class="num">4</div>
+    <h2><span data-l="en">Add the Facebook Page and Instagram to the portfolio</span><span data-l="ru">Добавьте страницу Facebook и Instagram в портфолио</span></h2>
+    <span class="t">5 min · 💻</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">In <b>business.facebook.com</b> click the gear icon <span class="btnlbl">⚙ Settings</span> (bottom left).</p>
+    <p data-l="ru">В <b>business.facebook.com</b> нажмите шестерёнку <span class="btnlbl">⚙ Настройки</span> (слева внизу).</p>
+    <div class="screen">
+      <div class="bar"><i></i><i></i><i></i><span>business.facebook.com/latest/settings/pages</span></div>
+      <div class="sc">
+        <div class="side"><div class="g">Business info</div><div class="g">Users</div><div>People</div><div>Partners</div><div class="g">Accounts</div><div class="on">Pages</div><div>Ad accounts</div><div>Instagram accounts</div></div>
+        <div class="main"><div class="h">Pages <span class="mbtn hl">+ Add</span></div>
+          <div class="opt hl"><b>Add an existing Facebook Page</b><span>Choose TOTALFIT Noah</span></div>
+          <div class="opt"><b>Request access to a Facebook Page</b><span>— not needed</span></div>
+          <div class="opt"><b>Create a new Facebook Page</b><span>— not needed</span></div>
+        </div>
+      </div>
+    </div>
+    <ol data-l="en">
+      <li><b>Accounts → Pages → + Add → Add an existing Facebook Page</b> → choose <b>TOTALFIT Noah</b> → confirm.</li>
+      <li><b>Accounts → Instagram accounts → + Add</b> → log in to <b>@totalfit.noahgym</b> in the window that opens → confirm.</li>
+    </ol>
+    <ol data-l="ru">
+      <li><b>Аккаунты → Страницы → + Добавить → Добавить существующую Страницу Facebook</b> → выберите <b>TOTALFIT Noah</b> → подтвердите.</li>
+      <li><b>Аккаунты → Аккаунты Instagram → + Добавить</b> → в открывшемся окне войдите в <b>@totalfit.noahgym</b> → подтвердите.</li>
+    </ol>
+    <div class="note info" data-l="en">If your Facebook is in Japanese, the buttons have Japanese names, but they are in the same places.</div>
+    <div class="note info" data-l="ru">Если Facebook на японском, кнопки называются по-японски, но стоят на тех же местах.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 5 -->
+<article class="step" data-step="5">
+  <div class="step-h"><div class="num">5</div>
+    <h2><span data-l="en">Create the ad account (yen, Tokyo time)</span><span data-l="ru">Создайте рекламный аккаунт (иена, токийское время)</span></h2>
+    <span class="t">3 min · 💻</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en"><b>Settings → Accounts → Ad accounts → + Add → Create a new ad account.</b></p>
+    <p data-l="ru"><b>Настройки → Аккаунты → Рекламные аккаунты → + Добавить → Создать новый рекламный аккаунт.</b></p>
+    <div class="screen">
+      <div class="bar"><i></i><i></i><i></i><span>Create a new ad account for this portfolio</span></div>
+      <div class="sc">
+        <div class="side"><div class="on">Information</div><div>Usage</div><div>Confirm</div></div>
+        <div class="main">
+          <div class="lbl">Ad account name</div><div class="field">TOTALFIT NOAH Ads</div>
+          <div class="lbl">Time zone <span class="tag">CHECK</span></div><div class="field hl">(GMT+09:00) Asia/Tokyo</div>
+          <div class="lbl">Currency <span class="tag">CHECK</span></div><div class="field hl">JPY — Japanese Yen</div>
+          <div style="text-align:right"><span class="mbtn">Next</span></div>
+        </div>
+      </div>
+    </div>
+    <ol data-l="en">
+      <li>Name: <span class="val">TOTALFIT NOAH Ads</span></li>
+      <li>Time zone: <span class="val">(GMT+09:00) Asia/Tokyo</span></li>
+      <li>Currency: <span class="val">JPY — Japanese Yen</span></li>
+      <li><span class="btnlbl">Next</span> → “This ad account will be used for” → <b>My business portfolio (TOTALFIT NOAH)</b> → <span class="btnlbl">Create</span>.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Название: <span class="val">TOTALFIT NOAH Ads</span></li>
+      <li>Часовой пояс: <span class="val">(GMT+09:00) Asia/Tokyo</span></li>
+      <li>Валюта: <span class="val">JPY — японская иена</span></li>
+      <li><span class="btnlbl">Далее</span> → «Для чего будет использоваться» → <b>Моё бизнес-портфолио (TOTALFIT NOAH)</b> → <span class="btnlbl">Создать</span>.</li>
+    </ol>
+    <div class="note warn" data-l="en"><b>Important:</b> time zone and currency cannot be changed later. Meta suggests US dollars and Los Angeles time by default — please change both before clicking Next.</div>
+    <div class="note warn" data-l="ru"><b>Важно:</b> часовой пояс и валюту потом не поменять. По умолчанию Meta подставляет доллары и время Лос-Анджелеса — поменяйте оба поля до кнопки «Далее».</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 6 -->
+<article class="step" data-step="6">
+  <div class="step-h"><div class="num">6</div>
+    <h2><span data-l="en">Add a payment card</span><span data-l="ru">Привяжите карту для оплаты</span></h2>
+    <span class="t">3 min · 💻</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <div class="note warn" data-l="en"><b>Wait for our message about which card to use</b> — we will tell you separately. You add the card yourself; we never see card details.</div>
+    <div class="note warn" data-l="ru"><b>Какую карту привязать — мы напишем отдельно.</b> Карту добавляете вы сами, её данные мы не видим.</div>
+    <ol data-l="en">
+      <li>Open <a href="https://business.facebook.com/billing_hub/payment_settings" target="_blank" rel="noopener">Billing &amp; payments</a> → choose the ad account <b>TOTALFIT NOAH Ads</b>.</li>
+      <li><span class="btnlbl">Add payment method</span> → credit or debit card.</li>
+      <li>Billing country: <b>Japan</b>, address — the gym address.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Откройте <a href="https://business.facebook.com/billing_hub/payment_settings" target="_blank" rel="noopener">Оплата и платежи</a> → выберите аккаунт <b>TOTALFIT NOAH Ads</b>.</li>
+      <li><span class="btnlbl">Добавить способ оплаты</span> → кредитная или дебетовая карта.</li>
+      <li>Страна плательщика: <b>Япония</b>, адрес — адрес клуба.</li>
+    </ol>
+    <ul data-l="en">
+      <li>The card should be in the owner's or the company's name, issued in Japan (Visa, Mastercard or JCB).</li>
+      <li>Make sure online and overseas payments are allowed on the card — Meta may charge from abroad.</li>
+      <li>Keep enough money on the card: a declined payment pauses the ads and can lead to restrictions.</li>
+    </ul>
+    <ul data-l="ru">
+      <li>Карта — на имя владельца или компании, выпущена в Японии (Visa, Mastercard или JCB).</li>
+      <li>Проверьте, что по карте разрешены онлайн- и зарубежные платежи — Meta может списывать из-за рубежа.</li>
+      <li>Держите на карте достаточно денег: отказ в оплате останавливает рекламу и может привести к ограничениям.</li>
+    </ul>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 7 -->
+<article class="step" data-step="7">
+  <div class="step-h"><div class="num">7</div>
+    <h2><span data-l="en">Give us access (by email)</span><span data-l="ru">Дайте нам доступ (по почте)</span></h2>
+    <span class="t">5 min · 💻</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">We will work inside your portfolio with our own Facebook profile. You can remove our access at any time with one click.</p>
+    <p data-l="ru">Мы будем работать в вашем портфолио со своего профиля Facebook. Убрать наш доступ можно в любой момент одной кнопкой.</p>
+    <div class="copy"><code id="em">alexandr.egorov1199@gmail.com</code><button id="cp" type="button"><span data-l="en">Copy</span><span data-l="ru">Копировать</span></button></div>
+    <p data-l="en"><b>Settings → Users → People → + Invite people</b>. The window has 4 steps:</p>
+    <p data-l="ru"><b>Настройки → Пользователи → Люди → + Пригласить людей</b>. В окне 4 шага:</p>
+    <div class="screen">
+      <div class="bar"><i></i><i></i><i></i><span>Invite people</span></div>
+      <div class="sc">
+        <div class="side"><div>1 Enter email</div><div class="on">2 Portfolio access</div><div>3 Assign assets</div><div>4 Review</div></div>
+        <div class="main">
+          <div class="opt"><b>Partial access · Basic</b><span>on automatically</span></div>
+          <div class="opt hl"><b>Full control · Everything</b><span><i class="toggle"></i>Manage — turn ON</span></div>
+          <div style="text-align:right"><span class="mbtn">Next</span></div>
+        </div>
+      </div>
+    </div>
+    <ol data-l="en">
+      <li><b>Enter email:</b> paste the email above → <span class="btnlbl">Next</span>.</li>
+      <li><b>Business portfolio access:</b> turn on <b>Full control → Manage</b> (we need it to set up website tracking for ads) → <span class="btnlbl">Next</span>.</li>
+      <li><b>Assign assets:</b>
+        <ul>
+          <li>Facebook Pages → <b>TOTALFIT Noah</b> → Full control</li>
+          <li>Ad accounts → <b>TOTALFIT NOAH Ads</b> → Full control</li>
+          <li>Instagram accounts → <b>@totalfit.noahgym</b> → Full control</li>
+        </ul>
+        → <span class="btnlbl">Next</span>.</li>
+      <li><b>Review</b> → <span class="btnlbl">Send request</span>.</li>
+    </ol>
+    <ol data-l="ru">
+      <li><b>Почта:</b> вставьте адрес выше → <span class="btnlbl">Далее</span>.</li>
+      <li><b>Доступ к бизнес-портфолио:</b> включите <b>Полный доступ → Управление</b> (он нужен, чтобы настроить учёт заявок с сайта) → <span class="btnlbl">Далее</span>.</li>
+      <li><b>Назначьте объекты:</b>
+        <ul>
+          <li>Страницы Facebook → <b>TOTALFIT Noah</b> → полный доступ</li>
+          <li>Рекламные аккаунты → <b>TOTALFIT NOAH Ads</b> → полный доступ</li>
+          <li>Аккаунты Instagram → <b>@totalfit.noahgym</b> → полный доступ</li>
+        </ul>
+        → <span class="btnlbl">Далее</span>.</li>
+      <li><b>Проверьте</b> → <span class="btnlbl">Отправить запрос</span>.</li>
+    </ol>
+    <div class="note ok" data-l="en">After that we get an email, accept the invitation, and you will see us in the People list. You stay the owner and the only one who pays.</div>
+    <div class="note ok" data-l="ru">После этого нам придёт письмо, мы примем приглашение, и вы увидите нас в списке «Люди». Владельцем и плательщиком остаётесь только вы.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+
+<!-- STEP 8 -->
+<article class="step" data-step="8">
+  <div class="step-h"><div class="num">8</div>
+    <h2><span data-l="en">Send us a short message</span><span data-l="ru">Напишите нам коротко</span></h2>
+    <span class="t">1 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">Write to us in the chat:</p>
+    <p data-l="ru">Напишите нам в чат:</p>
+    <ul data-l="en">
+      <li>“Done” + a screenshot of <b>Settings → People</b> (our email will show as “Pending”).</li>
+      <li>The <b>ad account ID</b> — the number under “TOTALFIT NOAH Ads” in Settings → Ad accounts.</li>
+      <li>If something did not work — a screenshot of the screen where you stopped. We will help.</li>
+    </ul>
+    <ul data-l="ru">
+      <li>«Готово» + скрин экрана <b>Настройки → Люди</b> (наша почта будет со статусом «Ожидает»).</li>
+      <li><b>Номер рекламного аккаунта</b> — цифры под «TOTALFIT NOAH Ads» в Настройки → Рекламные аккаунты.</li>
+      <li>Если что-то не получилось — скрин экрана, где остановились. Поможем.</li>
+    </ul>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</article>
+</section>
+
+<div class="note ok" id="fin" hidden><span data-l="en"><b>All done — thank you!</b> We will take it from here.</span><span data-l="ru"><b>Всё готово — спасибо!</b> Дальше работаем мы.</span></div>
+
+<footer>TOTALFIT NOAH · <span data-l="en">Meta Ads setup guide · Oct 2026</span><span data-l="ru">инструкция по подготовке к рекламе · октябрь 2026</span></footer>
+</main>
+
+<script>
+(function(){
+  var KEY='tfn-setup-ru-v1', LKEY='tfn-lang';
+  function get(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
+  function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var done=get(KEY,{});
+  function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});put(LKEY,l)}
+  var q=new URLSearchParams(location.search).get('lang');
+  setLang('ru');
+  document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.set)}});
+  function refresh(){
+    var n=0;steps.forEach(function(s){var d=!!done[s.dataset.step];s.classList.toggle('done',d);s.querySelector('.mark input').checked=d;if(d)n++});
+    document.getElementById('bar').style.width=(n/steps.length*100)+'%';
+    document.getElementById('fin').hidden=n<steps.length;
+  }
+  steps.forEach(function(s,i){
+    s.querySelector('.step-h').onclick=function(){s.classList.toggle('open')};
+    s.querySelector('.mark input').onchange=function(e){
+      done[s.dataset.step]=e.target.checked;put(KEY,done);refresh();
+      if(e.target.checked){s.classList.remove('open');var nx=steps[i+1];if(nx&&!done[nx.dataset.step]){nx.classList.add('open');nx.scrollIntoView({behavior:'smooth',block:'start'})}}
+    };
+  });
+  var first=steps.find(function(s){return !done[s.dataset.step]});if(first)first.classList.add('open');
+  refresh();
+  document.getElementById('cp').onclick=function(){
+    var t=document.getElementById('em').textContent,b=this;
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var r=document.createRange();r.selectNode(document.getElementById('em'));getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}).finally(function(){b.style.background='#c8f0d8';setTimeout(function(){b.style.background=''},1200)});
+  };
+})();
+</script>
+</body>
+</html>
