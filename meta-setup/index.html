@@ -97,8 +97,7 @@ a{color:var(--accent)}
 .dd li{margin:4px 0}
 section h2.sec{font-size:20px;margin:30px 0 6px}
 footer{color:var(--muted);font-size:13px;margin-top:30px;text-align:center}
-[data-l]{display:none}
-html[lang=en] [data-l=en],html[lang=ru] [data-l=ru]{display:revert}
+html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
 @media (max-width:560px){
   .facts{grid-template-columns:1fr 1fr 1fr;gap:6px}
   .fact{padding:8px}
@@ -126,7 +125,7 @@ html[lang=en] [data-l=en],html[lang=ru] [data-l=ru]{display:revert}
   <div class="facts">
     <div class="fact"><b>~40 min</b><span data-l="en">total time</span><span data-l="ru">всего времени</span></div>
     <div class="fact"><b data-l="en">Computer</b><b data-l="ru">Компьютер</b><span data-l="en">steps 3–8</span><span data-l="ru">шаги 3–8</span></div>
-    <div class="fact"><b data-l="en">Owner</b><b data-l="ru">Владелец</b><span data-l="en">does it himself</span><span data-l="ru">делает сам</span></div>
+    <div class="fact"><b data-l="en">Owner</b><b data-l="ru">Владелец</b><span data-l="en">does it personally</span><span data-l="ru">делает сам</span></div>
   </div>
   <div class="note info" data-l="en"><b>Who should do this:</b> the person who manages the TOTALFIT NOAH Facebook Page, using <b>their own personal Facebook profile</b> (real name, used for a long time). Please do not create a new Facebook profile for this — new profiles are often blocked from advertising.</div>
   <div class="note info" data-l="ru"><b>Кто делает:</b> человек, который управляет страницей TOTALFIT NOAH в Facebook, со <b>своего личного профиля Facebook</b> (настоящее имя, давно пользуется). Новый профиль под это не заводите — новые профили часто блокируют для рекламы.</div>
