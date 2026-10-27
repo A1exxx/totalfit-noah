@@ -96,6 +96,12 @@ a{color:var(--accent)}
 .dd ul{margin:0;padding-left:18px;font-size:14px}
 .dd li{margin:4px 0}
 section h2.sec{font-size:20px;margin:30px 0 6px}
+.shot{margin:14px 0;border:1px solid #cfd5df;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.shot img{display:block;width:100%;height:auto;cursor:zoom-in}
+.shot figcaption{padding:9px 12px;font-size:14px;font-weight:600;background:#fff6f5;color:#8a1c14;border-top:1px solid #f3d3cf}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,22,.92);display:flex;align-items:center;justify-content:center;padding:12px;cursor:zoom-out;overflow:auto}
+#lb img{max-width:none;width:min(1280px,240vw);height:auto;border-radius:8px}
+@media (min-width:900px){#lb img{width:min(1280px,96vw)}}
 footer{color:var(--muted);font-size:13px;margin-top:30px;text-align:center}
 html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
 @media (max-width:560px){
@@ -127,6 +133,8 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
     <div class="fact"><b data-l="en">Computer</b><b data-l="ru">Компьютер</b><span data-l="en">steps 3–8</span><span data-l="ru">шаги 3–8</span></div>
     <div class="fact"><b data-l="en">Owner</b><b data-l="ru">Владелец</b><span data-l="en">does it personally</span><span data-l="ru">делает сам</span></div>
   </div>
+  <div class="note info" data-l="en"><b>Screenshots:</b> real Meta screens with red frames and numbers — click in that order. Tap a screenshot to enlarge it. If your Facebook is in Japanese, the buttons are in the same places.</div>
+  <div class="note info" data-l="ru"><b>Скрины:</b> настоящие экраны Meta, красные рамки с номерами — нажимать по порядку. Скрин увеличивается по нажатию. Если Facebook на японском, кнопки стоят на тех же местах.</div>
   <div class="note info" data-l="en"><b>Who should do this:</b> the person who manages the TOTALFIT NOAH Facebook Page, using <b>their own personal Facebook profile</b> (real name, used for a long time). Please do not create a new Facebook profile for this — new profiles are often blocked from advertising.</div>
   <div class="note info" data-l="ru"><b>Кто делает:</b> человек, который управляет страницей TOTALFIT NOAH в Facebook, со <b>своего личного профиля Facebook</b> (настоящее имя, давно пользуется). Новый профиль под это не заводите — новые профили часто блокируют для рекламы.</div>
 </div>
@@ -186,6 +194,7 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
       <li>Нажмите <span class="btnlbl">Двухфакторная аутентификация</span> → выберите свой профиль Facebook.</li>
       <li>Выберите <b>приложение-аутентификатор</b> (Google Authenticator, Microsoft Authenticator) или <b>SMS</b> и следуйте подсказкам.</li>
     </ol>
+    <figure class="shot"><img src="img/s0-2fa.jpg" alt="Accounts Center, Password and security, Two-factor authentication" loading="lazy"><figcaption data-l="en">① Password and security → ② Two-factor authentication</figcaption><figcaption data-l="ru">① Пароль и безопасность → ② Двухфакторная аутентификация</figcaption></figure>
     <div class="note ok" data-l="en">Meta requires this for business portfolio admins. It also protects the account from being taken over.</div>
     <div class="note ok" data-l="ru">Meta требует этого от админов бизнес-портфолио. Заодно это защищает аккаунт от взлома.</div>
     <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
@@ -212,15 +221,10 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
       <li>Категория: <b>Спортзал / фитнес-центр</b> → выберите <b>Бизнес</b> (не «Автор»).</li>
       <li>Проверьте контакты: почта, телефон, адрес в Йокогаме.</li>
     </ol>
-    <div class="phone">
-      <div class="pr"><b>Settings and activity</b></div>
-      <div class="pr">Accounts Center</div>
-      <div class="pr">Notifications</div>
-      <div class="pr hl">Account type and tools <span class="tag">TAP</span></div>
-      <div class="pr">Help</div>
-    </div>
-    <p class="cap" data-l="en">If you already see “Professional dashboard” on your profile and the type is Business — this step is already done.</p>
-    <p class="cap" data-l="ru">Если в профиле уже есть «Профессиональная панель» и тип «Бизнес» — шаг уже выполнен.</p>
+    <p data-l="en"><b>How to check on a computer:</b> open <a href="https://www.instagram.com/accounts/edit/" target="_blank" rel="noopener">instagram.com → Settings</a>. If you see <b>Professional account</b> in the menu, the account is already a business account — just check the category.</p>
+    <p data-l="ru"><b>Как проверить с компьютера:</b> откройте <a href="https://www.instagram.com/accounts/edit/" target="_blank" rel="noopener">instagram.com → Настройки</a>. Если в меню есть <b>Профессиональный аккаунт</b> — аккаунт уже бизнес, проверьте только категорию.</p>
+    <figure class="shot"><img src="img/s1-ig-settings.jpg" alt="Instagram settings with Professional account item" loading="lazy"><figcaption data-l="en">① “Professional account” in Settings = already a business account</figcaption><figcaption data-l="ru">① «Профессиональный аккаунт» в настройках = аккаунт уже бизнес</figcaption></figure>
+    <figure class="shot"><img src="img/s1-ig-pro.jpg" alt="Instagram professional account category" loading="lazy"><figcaption data-l="en">② Category should be Gym/Physical Fitness Center — “Change” if not</figcaption><figcaption data-l="ru">② Категория — Gym/Physical Fitness Center; если другая — «Изменить»</figcaption></figure>
     <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
   </div>
 </article>
@@ -270,6 +274,13 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
       <li>Рабочая почта: <span class="val">totalfit.noah@gmail.com</span> → подтвердите её по письму от Meta.</li>
       <li>Затем откройте <b>Настройки → Информация о компании</b> и заполните: адрес <span class="val">1491-1 Iijima-cho, Sakae-ku, Yokohama, Kanagawa 244-0842</span>, телефон, сайт <span class="val">totalfitnoah.com</span>.</li>
     </ol>
+    <figure class="shot"><img src="img/s3-create.jpg" alt="Create a business portfolio form" loading="lazy"><figcaption data-l="en">① Portfolio name → ② your first and last name → ③ business email → ④ Create</figcaption><figcaption data-l="ru">① Название → ② ваши имя и фамилия → ③ рабочая почта → ④ Create (Создать)</figcaption></figure>
+    <p class="cap" data-l="en">If you already use Meta Business Suite for something else, open the portfolio menu at the top left and click “Create a business portfolio”:</p>
+    <p class="cap" data-l="ru">Если вы уже заходили в Meta Business Suite, откройте меню портфолио слева вверху и нажмите «Create a business portfolio»:</p>
+    <figure class="shot"><img src="img/s3-switch.jpg" alt="Portfolio menu with Create a business portfolio button" loading="lazy"></figure>
+    <p class="cap" data-l="en">Then fill in the business details: Settings → Business info → Edit.</p>
+    <p class="cap" data-l="ru">Затем заполните данные компании: Настройки → Business info → Edit.</p>
+    <figure class="shot"><img src="img/s3-info.jpg" alt="Business info page with Edit button" loading="lazy"><figcaption data-l="en">① Business info → ② Edit: legal name, address, phone, website</figcaption><figcaption data-l="ru">① Business info → ② Edit: юр. название, адрес, телефон, сайт</figcaption></figure>
     <div class="note warn" data-l="en">If a TOTALFIT NOAH business portfolio already exists (someone created it before) — <b>do not create a second one</b>. Just use the existing one and go to step 4.</div>
     <div class="note warn" data-l="ru">Если портфолио TOTALFIT NOAH уже есть (кто-то создавал раньше) — <b>второе не создавайте</b>. Используйте существующее и переходите к шагу 4.</div>
     <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
@@ -284,17 +295,8 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
   <div class="step-b">
     <p data-l="en">In <b>business.facebook.com</b> click the gear icon <span class="btnlbl">⚙ Settings</span> (bottom left).</p>
     <p data-l="ru">В <b>business.facebook.com</b> нажмите шестерёнку <span class="btnlbl">⚙ Настройки</span> (слева внизу).</p>
-    <div class="screen">
-      <div class="bar"><i></i><i></i><i></i><span>business.facebook.com/latest/settings/pages</span></div>
-      <div class="sc">
-        <div class="side"><div class="g">Business info</div><div class="g">Users</div><div>People</div><div>Partners</div><div class="g">Accounts</div><div class="on">Pages</div><div>Ad accounts</div><div>Instagram accounts</div></div>
-        <div class="main"><div class="h">Pages <span class="mbtn hl">+ Add</span></div>
-          <div class="opt hl"><b>Add an existing Facebook Page</b><span>Choose TOTALFIT Noah</span></div>
-          <div class="opt"><b>Request access to a Facebook Page</b><span>— not needed</span></div>
-          <div class="opt"><b>Create a new Facebook Page</b><span>— not needed</span></div>
-        </div>
-      </div>
-    </div>
+    <figure class="shot"><img src="img/s4-pages.jpg" alt="Pages settings with Add menu" loading="lazy"><figcaption data-l="en">① Pages → ② + Add → ③ Add an existing Facebook Page</figcaption><figcaption data-l="ru">① Pages (Страницы) → ② + Add → ③ Add an existing Facebook Page</figcaption></figure>
+    <figure class="shot"><img src="img/s4-instagram.jpg" alt="Instagram accounts settings with Add button" loading="lazy"><figcaption data-l="en">① Instagram accounts → ② + Add → log in to @totalfit.noahgym</figcaption><figcaption data-l="ru">① Instagram accounts → ② + Add → вход в @totalfit.noahgym</figcaption></figure>
     <ol data-l="en">
       <li><b>Accounts → Pages → + Add → Add an existing Facebook Page</b> → choose <b>TOTALFIT Noah</b> → confirm.</li>
       <li><b>Accounts → Instagram accounts → + Add</b> → log in to <b>@totalfit.noahgym</b> in the window that opens → confirm.</li>
@@ -317,18 +319,9 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
   <div class="step-b">
     <p data-l="en"><b>Settings → Accounts → Ad accounts → + Add → Create a new ad account.</b></p>
     <p data-l="ru"><b>Настройки → Аккаунты → Рекламные аккаунты → + Добавить → Создать новый рекламный аккаунт.</b></p>
-    <div class="screen">
-      <div class="bar"><i></i><i></i><i></i><span>Create a new ad account for this portfolio</span></div>
-      <div class="sc">
-        <div class="side"><div class="on">Information</div><div>Usage</div><div>Confirm</div></div>
-        <div class="main">
-          <div class="lbl">Ad account name</div><div class="field">TOTALFIT NOAH Ads</div>
-          <div class="lbl">Time zone <span class="tag">CHECK</span></div><div class="field hl">(GMT+09:00) Asia/Tokyo</div>
-          <div class="lbl">Currency <span class="tag">CHECK</span></div><div class="field hl">JPY — Japanese Yen</div>
-          <div style="text-align:right"><span class="mbtn">Next</span></div>
-        </div>
-      </div>
-    </div>
+    <figure class="shot"><img src="img/s5-menu.jpg" alt="Add an ad account menu" loading="lazy"><figcaption data-l="en">Ad accounts → + Add → ① Create a new ad account</figcaption><figcaption data-l="ru">Ad accounts → + Add → ① Create a new ad account</figcaption></figure>
+    <figure class="shot"><img src="img/s5-form.jpg" alt="New ad account form with Tokyo time zone and JPY currency" loading="lazy"><figcaption data-l="en">① Name → ② (GMT+09:00) Asia/Tokyo → ③ JPY — Japanese Yen → ④ Next</figcaption><figcaption data-l="ru">① Название → ② (GMT+09:00) Asia/Tokyo → ③ JPY — Japanese Yen → ④ Next</figcaption></figure>
+    <figure class="shot"><img src="img/s5-usage.jpg" alt="Select who will use this ad account" loading="lazy"><figcaption data-l="en">① My business → ② Next → then Create</figcaption><figcaption data-l="ru">① My business (мой бизнес) → ② Next → затем Create</figcaption></figure>
     <ol data-l="en">
       <li>Name: <span class="val">TOTALFIT NOAH Ads</span></li>
       <li>Time zone: <span class="val">(GMT+09:00) Asia/Tokyo</span></li>
@@ -365,6 +358,7 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
       <li><span class="btnlbl">Добавить способ оплаты</span> → кредитная или дебетовая карта.</li>
       <li>Страна плательщика: <b>Япония</b>, адрес — адрес клуба.</li>
     </ol>
+    <figure class="shot"><img src="img/s6-billing.jpg" alt="Billing and payments, Payment methods" loading="lazy"><figcaption data-l="en">① Payment methods → ② Add payment method (under TOTALFIT NOAH Ads)</figcaption><figcaption data-l="ru">① Payment methods → ② Add payment method (под TOTALFIT NOAH Ads)</figcaption></figure>
     <ul data-l="en">
       <li>The card should be in the owner's or the company's name, issued in Japan (Visa, Mastercard or JCB).</li>
       <li>Make sure online and overseas payments are allowed on the card — Meta may charge from abroad.</li>
@@ -390,17 +384,10 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
     <div class="copy"><code id="em">alexandr.egorov1199@gmail.com</code><button id="cp" type="button"><span data-l="en">Copy</span><span data-l="ru">Копировать</span></button></div>
     <p data-l="en"><b>Settings → Users → People → + Invite people</b>. The window has 4 steps:</p>
     <p data-l="ru"><b>Настройки → Пользователи → Люди → + Пригласить людей</b>. В окне 4 шага:</p>
-    <div class="screen">
-      <div class="bar"><i></i><i></i><i></i><span>Invite people</span></div>
-      <div class="sc">
-        <div class="side"><div>1 Enter email</div><div class="on">2 Portfolio access</div><div>3 Assign assets</div><div>4 Review</div></div>
-        <div class="main">
-          <div class="opt"><b>Partial access · Basic</b><span>on automatically</span></div>
-          <div class="opt hl"><b>Full control · Everything</b><span><i class="toggle"></i>Manage — turn ON</span></div>
-          <div style="text-align:right"><span class="mbtn">Next</span></div>
-        </div>
-      </div>
-    </div>
+    <figure class="shot"><img src="img/s7-people.jpg" alt="People settings with Invite people button" loading="lazy"><figcaption data-l="en">① People → ② + Invite people</figcaption><figcaption data-l="ru">① People (Люди) → ② + Invite people</figcaption></figure>
+    <figure class="shot"><img src="img/s7-email.jpg" alt="Enter email step" loading="lazy"><figcaption data-l="en">① Paste our email, press Enter → ② Next</figcaption><figcaption data-l="ru">① Вставьте нашу почту, нажмите Enter → ② Next</figcaption></figure>
+    <figure class="shot"><img src="img/s7-access.jpg" alt="Give access step with Full access Manage toggle" loading="lazy"><figcaption data-l="en">① Turn ON “Manage” under Full access → ② Next. The yellow warning is normal.</figcaption><figcaption data-l="ru">① Включите «Manage» под Full access → ② Next. Жёлтое предупреждение — это нормально.</figcaption></figure>
+    <figure class="shot"><img src="img/s7-assets.jpg" alt="Assign assets step" loading="lazy"><figcaption data-l="en">① Facebook Pages → ② tick TOTALFIT Noah → ③ Ad accounts → tick TOTALFIT NOAH Ads (and Instagram, if listed) → ④ Next → Send</figcaption><figcaption data-l="ru">① Facebook Pages → ② отметьте TOTALFIT Noah → ③ Ad accounts → отметьте TOTALFIT NOAH Ads (и Instagram, если есть) → ④ Next → отправить</figcaption></figure>
     <ol data-l="en">
       <li><b>Enter email:</b> paste the email above → <span class="btnlbl">Next</span>.</li>
       <li><b>Business portfolio access:</b> turn on <b>Full control → Manage</b> (we need it to set up website tracking for ads) → <span class="btnlbl">Next</span>.</li>
@@ -484,6 +471,11 @@ html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
   });
   var first=steps.find(function(s){return !done[s.dataset.step]});if(first)first.classList.add('open');
   refresh();
+  document.querySelectorAll('.shot img').forEach(function(im){im.onclick=function(){
+    var lb=document.createElement('div');lb.id='lb';var c=new Image();c.src=im.src;c.alt=im.alt;lb.appendChild(c);
+    lb.onclick=function(){lb.remove()};document.body.appendChild(lb);
+  }});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){var l=document.getElementById('lb');if(l)l.remove()}});
   document.getElementById('cp').onclick=function(){
     var t=document.getElementById('em').textContent,b=this;
     (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var r=document.createRange();r.selectNode(document.getElementById('em'));getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}).finally(function(){b.style.background='#c8f0d8';setTimeout(function(){b.style.background=''},1200)});
