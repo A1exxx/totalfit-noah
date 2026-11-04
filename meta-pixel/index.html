@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>TOTALFIT NOAH — Website form setup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#14161a;--muted:#5b6170;--line:#e3e6ec;
+  --accent:#0a66ff;--accent-soft:#e8f0ff;--ok:#119a55;--ok-soft:#e5f6ec;
+  --warn:#b54708;--warn-soft:#fff4e5;--bad:#c4271c;--bad-soft:#fdecea;
+  --meta-side:#f0f2f5;--radius:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(244,245,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:.02em;font-size:15px}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:0}
+.prog{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.lang{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.lang button{border:0;background:none;padding:6px 10px;font:600 13px Inter,sans-serif;cursor:pointer;color:var(--muted)}
+.lang button.on{background:var(--ink);color:#fff}
+.hero{padding:28px 0 8px}
+.hero h1{font-size:clamp(26px,6vw,36px);line-height:1.15;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{margin:0 0 6px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.fact b{display:block;font-size:18px}
+.fact span{font-size:13px;color:var(--muted)}
+.note{border-radius:12px;padding:12px 14px;margin:14px 0;font-size:15px}
+.note.warn{background:var(--warn-soft);color:#6b2a03}
+.note.info{background:var(--accent-soft);color:#0b3a8c}
+.note.ok{background:var(--ok-soft);color:#0b5232}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin:14px 0;overflow:hidden}
+.step.done{border-color:#9fd9b9}
+.step-h{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--accent-soft);color:var(--accent)}
+.step.done .num{background:var(--ok);color:#fff}
+.step-h h2{font-size:17px;margin:0;line-height:1.3;flex:1}
+.step-h .t{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.chev{transition:transform .2s;color:var(--muted)}
+.step.open .chev{transform:rotate(180deg)}
+.step-b{display:none;padding:0 16px 18px}
+.step.open .step-b{display:block}
+.step-b ol,.step-b ul{padding-left:22px;margin:8px 0}
+.step-b li{margin:6px 0}
+.btnlbl{display:inline-block;background:#eef1f6;border:1px solid #d8dde6;border-radius:6px;padding:0 6px;font-weight:600;font-size:14px;white-space:nowrap}
+.val{font-family:ui-monospace,Consolas,monospace;background:#eef1f6;border-radius:6px;padding:1px 6px;font-size:14px}
+.mark{display:flex;align-items:center;gap:10px;margin-top:14px;padding:12px 14px;border:1px dashed #b9c2d0;border-radius:12px;cursor:pointer;font-weight:600}
+.mark input{width:20px;height:20px;accent-color:var(--ok)}
+.copy{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#0f1726;color:#fff;border-radius:12px;padding:12px 14px;margin:10px 0}
+.copy code{font:600 15px ui-monospace,Consolas,monospace;word-break:break-all;flex:1;min-width:0}
+.copy button{border:0;border-radius:8px;padding:8px 12px;font:600 14px Inter,sans-serif;background:#fff;color:#0f1726;cursor:pointer}
+a{color:var(--accent)}
+.golink{display:inline-block;margin:6px 0;padding:10px 14px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600}
+/* schematic screens */
+.screen{border:1px solid #cfd5df;border-radius:12px;overflow:hidden;margin:14px 0;background:#fff;font-size:13px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.screen .bar{background:#e9ecf1;padding:6px 10px;display:flex;gap:6px;align-items:center;font-size:11px;color:#596172}
+.screen .bar i{width:8px;height:8px;border-radius:50%;background:#c3c9d3;display:inline-block}
+.screen .bar span{margin-left:6px;background:#fff;border-radius:6px;padding:2px 8px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sc{display:flex;min-height:150px}
+.side{width:38%;max-width:200px;background:var(--meta-side);padding:10px 8px;border-right:1px solid #e1e5eb}
+.side div{padding:5px 8px;border-radius:7px;color:#3d4350;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side .g{font-weight:700;color:#1c1e21;margin-top:6px}
+.side .on{background:#1c2b33;color:#fff;font-weight:600}
+.main{flex:1;padding:12px;min-width:0}
+.main .h{font-weight:700;font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mbtn{background:#0866ff;color:#fff;border-radius:7px;padding:4px 9px;font-weight:600;font-size:12px;white-space:nowrap}
+.mbtn.ghost{background:#fff;color:#1c1e21;border:1px solid #cbd2d9}
+.row{border:1px solid #e1e5eb;border-radius:8px;padding:8px;margin:6px 0;display:flex;justify-content:space-between;gap:8px}
+.field{border:1px solid #cbd2d9;border-radius:7px;padding:6px 8px;margin:3px 0 8px;color:#1c1e21;background:#fff}
+.lbl{font-weight:600;font-size:12px;color:#3d4350}
+.hl{outline:3px solid #ff3b30;outline-offset:2px;border-radius:7px;position:relative}
+.tag{font-size:11px;font-weight:700;color:#ff3b30;margin-left:4px}
+.opt{border:1px solid #e1e5eb;border-radius:8px;padding:8px;margin:6px 0}
+.opt b{display:block;font-size:13px}
+.opt span{color:#606770;font-size:12px}
+.toggle{display:inline-block;width:30px;height:17px;border-radius:9px;background:#0866ff;vertical-align:middle;position:relative;margin-right:6px}
+.toggle:after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+.phone{max-width:260px;margin:14px auto;border:1px solid #cfd5df;border-radius:22px;padding:12px;background:#fff;font-size:13px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.phone .pr{padding:8px 10px;border-bottom:1px solid #eef0f3;display:flex;justify-content:space-between}
+.phone .pr:last-child{border:0}
+.cap{font-size:12px;color:var(--muted);text-align:center;margin-top:-6px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dd>div{border-radius:12px;padding:12px 14px}
+.dd .y{background:var(--ok-soft)}
+.dd .n{background:var(--bad-soft)}
+.dd h3{margin:0 0 6px;font-size:15px}
+.dd ul{margin:0;padding-left:18px;font-size:14px}
+.dd li{margin:4px 0}
+section h2.sec{font-size:20px;margin:30px 0 6px}
+.shot{margin:14px 0;border:1px solid #cfd5df;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+.shot img{display:block;width:100%;height:auto;cursor:zoom-in}
+.shot figcaption{padding:9px 12px;font-size:14px;font-weight:600;background:#fff6f5;color:#8a1c14;border-top:1px solid #f3d3cf}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,22,.92);display:flex;align-items:center;justify-content:center;padding:12px;cursor:zoom-out;overflow:auto}
+#lb img{max-width:none;width:min(1280px,240vw);height:auto;border-radius:8px}
+@media (min-width:900px){#lb img{width:min(1280px,96vw)}}
+footer{color:var(--muted);font-size:13px;margin-top:30px;text-align:center}
+html[lang=en] [data-l=ru],html[lang=ru] [data-l=en]{display:none!important}
+@media (max-width:560px){
+  .facts{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .fact{padding:8px}
+  .fact b{font-size:15px}
+  .dd{grid-template-columns:1fr}
+  .step-h .t{display:none}
+  .side{width:34%}
+  .screen{font-size:12px}
+}
+.copy{align-items:flex-start}
+.copy code{white-space:pre-wrap;font-size:12px;line-height:1.45}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="brand">TOTALFIT NOAH<small data-l="en">Website form → Meta ads</small><small data-l="ru">Форма сайта → реклама Meta</small></div>
+  <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+  <div class="lang"><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+<main class="wrap">
+<div class="hero">
+  <h1 data-l="en">Connect the website form to Meta ads — 4 short steps</h1>
+  <h1 data-l="ru">Связать форму сайта с рекламой Meta — 4 коротких шага</h1>
+  <p data-l="en">Why: we will test two ways to get trial requests — the Instagram form and the form on totalfitnoah.com. Meta already sees requests from the Instagram form. To see requests from the website, Meta needs a small piece of code on the site. About 20 minutes in total.</p>
+  <p data-l="ru">Зачем: мы проверим два способа собирать заявки на пробное занятие — форму в Instagram и форму на сайте totalfitnoah.com. Заявки из формы Instagram Meta уже видит. Чтобы она видела заявки с сайта, на сайт нужно добавить небольшой код. Всего около 20 минут.</p>
+  <div class="facts">
+    <div class="fact"><b data-l="en">Step 1</b><b data-l="ru">Шаг 1</b><span data-l="en">page admin, 3 min</span><span data-l="ru">админ страницы, 3 мин</span></div>
+    <div class="fact"><b data-l="en">Steps 2–3</b><b data-l="ru">Шаги 2–3</b><span data-l="en">website editor, 15 min</span><span data-l="ru">кто правит сайт, 15 мин</span></div>
+    <div class="fact"><b data-l="en">Step 4</b><b data-l="ru">Шаг 4</b><span data-l="en">anyone, 2 min</span><span data-l="ru">любой, 2 мин</span></div>
+  </div>
+  <div class="note info" data-l="en">No passwords are shared. Ads stay off until you approve the launch.</div>
+  <div class="note info" data-l="ru">Пароли никому передавать не нужно. Реклама выключена, пока вы не одобрите запуск.</div>
+</div>
+
+<section class="step" data-step="s1">
+  <div class="step-h"><div class="num">1</div><h2 data-l="en">Create the Meta code (a "dataset") and copy its ID</h2><h2 data-l="ru">Создать код Meta («набор данных») и скопировать его номер</h2><span class="t">3 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">Done by the person who manages the Facebook page (admin of "Totalfit Noah GYM").</p>
+    <p data-l="ru">Делает тот, кто управляет страницей в Facebook (администратор «Totalfit Noah GYM»).</p>
+    <a class="golink" href="https://business.facebook.com/events_manager2/overview?business_id=453964787712584" target="_blank" rel="noopener"><span data-l="en">Open Events Manager</span><span data-l="ru">Открыть Events Manager</span></a>
+    <ol data-l="en">
+      <li>Click <span class="btnlbl">+ Connect data</span> (green button on the left).</li>
+      <li>Choose <span class="btnlbl">Web</span> → <span class="btnlbl">Connect</span>.</li>
+      <li>Name: <span class="val">TOTALFIT NOAH Website</span> → <span class="btnlbl">Create</span>.</li>
+      <li>If Meta offers partner integrations or a website check — close that window, it is not needed.</li>
+      <li>Open the new dataset → <span class="btnlbl">Settings</span>. Copy the <b>Dataset ID</b> (15–16 digits) and paste it below.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>Нажмите <span class="btnlbl">+ Подключить данные</span> (зелёная кнопка слева).</li>
+      <li>Выберите <span class="btnlbl">Веб</span> → <span class="btnlbl">Подключить</span>.</li>
+      <li>Название: <span class="val">TOTALFIT NOAH Website</span> → <span class="btnlbl">Создать</span>.</li>
+      <li>Если Meta предложит подключить партнёра или проверить сайт — закройте это окно, оно не нужно.</li>
+      <li>Откройте созданный набор → <span class="btnlbl">Настройки</span>. Скопируйте <b>ID набора данных</b> (15–16 цифр) и вставьте ниже.</li>
+    </ol>
+    <label class="lbl" for="pid" data-l="en">Dataset ID — the code in step 2 fills in automatically:</label>
+    <label class="lbl" for="pid" data-l="ru">ID набора данных — код в шаге 2 подставится сам:</label>
+    <input id="pid" inputmode="numeric" autocomplete="off" placeholder="1234567890123456" style="width:100%;font:600 18px ui-monospace,Consolas,monospace;padding:10px 12px;border:2px solid var(--line);border-radius:10px;margin:6px 0">
+    <label class="mark"><input type="checkbox"><span data-l="en">Done — ID copied</span><span data-l="ru">Готово — номер скопирован</span></label>
+  </div>
+</section>
+
+<section class="step" data-step="s2">
+  <div class="step-h"><div class="num">2</div><h2 data-l="en">Add the code to every page of the website</h2><h2 data-l="ru">Добавить код на все страницы сайта</h2><span class="t">10 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en">Done by whoever edits totalfitnoah.com (the site runs on Netlify). Paste this block inside <span class="val">&lt;head&gt;</span> of <b>every</b> page — index.html, thanks.html, privacy.html and any others — then publish.</p>
+    <p data-l="ru">Делает тот, кто правит сайт totalfitnoah.com (сайт работает на Netlify). Вставьте этот блок внутрь <span class="val">&lt;head&gt;</span> <b>каждой</b> страницы — index.html, thanks.html, privacy.html и остальных — и опубликуйте.</p>
+    <div class="copy"><code id="c1"></code><button data-c="c1">Copy</button></div>
+    <div class="note warn noid" data-l="en">Paste the Dataset ID in step 1 first — until then the code shows YOUR_ID.</div>
+    <div class="note warn noid" data-l="ru">Сначала вставьте номер в шаге 1 — до этого в коде стоит YOUR_ID.</div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done — code is live on all pages</span><span data-l="ru">Готово — код на всех страницах</span></label>
+  </div>
+</section>
+
+<section class="step" data-step="s3">
+  <div class="step-h"><div class="num">3</div><h2 data-l="en">Thank-you page: count a request + privacy note</h2><h2 data-l="ru">Страница «Спасибо»: отметка заявки + строка в политике</h2><span class="t">5 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <p data-l="en"><b>A.</b> In <span class="val">thanks.html</span> only, add this line right before <span class="val">&lt;/body&gt;</span>. It tells Meta "one request was sent".</p>
+    <p data-l="ru"><b>А.</b> Только в <span class="val">thanks.html</span> добавьте эту строку прямо перед <span class="val">&lt;/body&gt;</span>. Она сообщает Meta: «отправлена одна заявка».</p>
+    <div class="copy"><code id="c2">&lt;script&gt;fbq('track','Lead');&lt;/script&gt;</code><button data-c="c2">Copy</button></div>
+    <p data-l="en"><b>B.</b> Japanese law requires telling visitors which outside services receive data from the site. Add this to the privacy page:</p>
+    <p data-l="ru"><b>Б.</b> По закону Японии сайт должен сообщать, каким внешним сервисам уходят данные посетителей. Добавьте на страницу политики:</p>
+    <div class="copy"><code id="c3">当サイトでは、広告の効果測定のためにMeta Platforms, Inc.が提供する「Metaピクセル」を使用しています。閲覧したページや操作の情報が、Cookie等によりMeta社に送信されます。詳しくはMeta社のプライバシーポリシー（https://www.facebook.com/privacy/policy/）をご確認ください。</code><button data-c="c3">Copy</button></div>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done — both added and published</span><span data-l="ru">Готово — обе правки опубликованы</span></label>
+  </div>
+</section>
+
+<section class="step" data-step="s4">
+  <div class="step-h"><div class="num">4</div><h2 data-l="en">Check that requests reach you, then tell us</h2><h2 data-l="ru">Проверить, что заявки доходят, и сообщить нам</h2><span class="t">2 min</span><span class="chev">▾</span></div>
+  <div class="step-b">
+    <ol data-l="en">
+      <li>On Nov 5 we sent a test request from the website, name <span class="val">テスト送信（連絡不要）</span>. Check it reached your email or Netlify → <span class="btnlbl">Forms</span>. If it is only in Netlify, turn on emails: Netlify → Site configuration → <span class="btnlbl">Notifications</span> → <span class="btnlbl">Emails and webhooks</span> → <span class="btnlbl">Add notification</span> → "Email notification" for form submissions, to the address staff read every day.</li>
+      <li>Requests from the Instagram form are in Meta Business Suite → <span class="btnlbl">All tools</span> → <span class="btnlbl">Instant forms</span> → <span class="btnlbl">Download</span>. We will send those to email too.</li>
+      <li>Message us: "code installed" + the Dataset ID. We will check that Meta sees visits and requests — nothing else is needed from you.</li>
+    </ol>
+    <ol data-l="ru">
+      <li>5 ноября мы отправили с сайта тестовую заявку с именем <span class="val">テスト送信（連絡不要）</span>. Проверьте, пришла ли она на почту или в Netlify → <span class="btnlbl">Forms</span>. Если она есть только в Netlify — включите письма: Netlify → Site configuration → <span class="btnlbl">Notifications</span> → <span class="btnlbl">Emails and webhooks</span> → <span class="btnlbl">Add notification</span> → «Email notification» для заявок формы, на почту, которую сотрудники читают каждый день.</li>
+      <li>Заявки из формы Instagram лежат в Meta Business Suite → <span class="btnlbl">Все инструменты</span> → <span class="btnlbl">Моментальные формы</span> → <span class="btnlbl">Скачать</span>. Их мы тоже настроим на почту.</li>
+      <li>Напишите нам: «код поставлен» и номер набора данных. Дальше мы сами проверим, что Meta видит посещения и заявки.</li>
+    </ol>
+    <label class="mark"><input type="checkbox"><span data-l="en">Done</span><span data-l="ru">Готово</span></label>
+  </div>
+</section>
+
+<div class="note ok" id="fin" hidden><span data-l="en">All set — thank you! We take it from here.</span><span data-l="ru">Всё готово, спасибо! Дальше мы сами.</span></div>
+<footer>TOTALFIT NOAH · 2026</footer>
+</main>
+<script>
+(function(){
+  var KEY='tfn-pixel-v1', LKEY='tfn-lang', PKEY='tfn-pixel-id';
+  function get(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
+  function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var done=get(KEY,{});
+  function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});put(LKEY,l)}
+  var q=new URLSearchParams(location.search);
+  setLang(q.get('lang')==='ru'||q.get('lang')==='en'?q.get('lang'):get(LKEY,'en'));
+  document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.set)}});
+  var NL=String.fromCharCode(10);
+  function code(id){return ["<!-- Meta Pixel -->","<script>",
+    "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?",
+    "n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;",
+    "n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;",
+    "t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,",
+    "document,'script','https://connect.facebook.net/en_US/fbevents.js');",
+    "fbq('init','"+id+"');","fbq('track','PageView');","</scr"+"ipt>",
+    '<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id='+id+'&ev=PageView&noscript=1"/></noscript>',
+    "<!-- End Meta Pixel -->"].join(NL)}
+  var pid=document.getElementById('pid');
+  function upd(){var v=(pid.value||'').replace(/[^0-9]/g,'');var ok=v.length>=14;document.getElementById('c1').textContent=code(ok?v:'YOUR_ID');
+    document.querySelectorAll('.noid').forEach(function(n){n.style.visibility=ok?'hidden':'';n.style.height=ok?'0':'';n.style.padding=ok?'0':'';n.style.margin=ok?'0':''});if(ok)put(PKEY,v)}
+  pid.value=q.get('id')||get(PKEY,'');pid.oninput=upd;upd();
+  function refresh(){var n=0;steps.forEach(function(s){var d=!!done[s.dataset.step];s.classList.toggle('done',d);s.querySelector('.mark input').checked=d;if(d)n++});document.getElementById('bar').style.width=(n/steps.length*100)+'%';document.getElementById('fin').hidden=n<steps.length}
+  steps.forEach(function(s,i){
+    s.querySelector('.step-h').onclick=function(){s.classList.toggle('open')};
+    s.querySelector('.mark input').onchange=function(e){done[s.dataset.step]=e.target.checked;put(KEY,done);refresh();
+      if(e.target.checked){s.classList.remove('open');var nx=steps[i+1];if(nx&&!done[nx.dataset.step]){nx.classList.add('open');nx.scrollIntoView({behavior:'smooth',block:'start'})}}};
+  });
+  var first=steps.find(function(s){return !done[s.dataset.step]});if(first)first.classList.add('open');
+  refresh();
+  document.querySelectorAll('.copy button').forEach(function(b){b.onclick=function(){var el=document.getElementById(b.dataset.c),t=el.textContent;
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var r=document.createRange();r.selectNode(el);getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}).finally(function(){b.textContent='✓';setTimeout(function(){b.textContent='Copy'},1200)})}});
+})();
+</script>
+</body>
+</html>
