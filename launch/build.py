@@ -72,8 +72,8 @@ NEED = [
   "Назвать одного человека, который отвечает на новые заявки, и дать почту (и LINE, если пользуетесь), куда присылать заявки."),
  ("Tell us which classes have free places, and which are full (we know kids on Wednesday is full) — we will not advertise full classes.",
   "Сказать, в каких занятиях есть места, а какие заполнены (знаем, что дети в среду — полная группа). Полные занятия рекламировать не будем."),
- ("Website: invite us to Netlify (1 minute) — or paste the code yourself. Instructions: <a href=\"../meta-pixel/\">meta-pixel page</a>. Needed only for the website test from week 2.",
-  "Сайт: пригласить нас в Netlify (1 минута) или вставить код самим. Инструкция: <a href=\"../meta-pixel/\">страница про код сайта</a>. Нужно только для проверки формы сайта со 2-й недели."),
+ ("Website: invite us to Netlify (1 minute) — or paste the code yourself. Instructions: <a href=\"../meta-pixel/\">meta-pixel page</a>. Needed for the website test from week 2 — and so that website requests also arrive in the Telegram group.",
+  "Сайт: пригласить нас в Netlify (1 минута) или вставить код самим. Инструкция: <a href=\"../meta-pixel/\">страница про код сайта</a>. Нужно для проверки формы сайта со 2-й недели и чтобы заявки с сайта тоже приходили в группу Telegram."),
  ("Check your email: did our test request from the website (name テスト送信（連絡不要）, Nov 5) arrive?",
   "Проверить почту: пришла ли наша тестовая заявка с сайта (имя テスト送信（連絡不要）, 5 ноября)?"),
  ("Join our Telegram group for requests (link in chat) — or tell us if your team prefers LINE.",
@@ -169,9 +169,9 @@ footer{{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}}
    "Чтобы понимать, что заявка пришла из рекламы, на сайт ставится код (раздел 4). Без него Meta не учится на заявках с сайта.")}</div>
 </div>
 <div class="tg">{b("All requests in one place: a Telegram group", "Все заявки в одном месте: группа в Telegram", "h3")}
-{b("Every new request — from the Instagram form <b>and</b> from the website — comes as a message to one Telegram group «TOTALFIT NOAH — requests». We set it up; you only join.",
-   "Каждая новая заявка — и из формы Instagram, <b>и</b> с сайта — приходит сообщением в одну группу Telegram «TOTALFIT NOAH — заявки». Мы её настраиваем, вам нужно только вступить.")}
-<div class="msg"><b>🟢 New request · Instagram · T4</b><br>山田 花子 · 090-xxxx-xxxx · hanako@…<br>Program: キックボクシング<br>11/10 14:32</div>
+{b("Every new request — from the Instagram form <b>and</b> from the website — comes as a message to one Telegram group «TOTALFIT NOAH — 申込み / Leads». The group and the bot are ready and tested; you only join.",
+   "Каждая новая заявка — и из формы Instagram, <b>и</b> с сайта — приходит сообщением в одну группу Telegram «TOTALFIT NOAH — 申込み / Leads». Группа и бот уже готовы и проверены, вам нужно только вступить.")}
+<div class="msg"><b>📩 新しい申込み / New lead — Instagram/Facebook</b><br>🕒 11/10 14:32 (JST)<br>名前 / Name: 山田 花子<br>電話 / Phone: 090-xxxx-xxxx<br>メール / Email: hanako@…<br>体験したいプログラムは？: キックボクシング<br><br>1時間以内に連絡してください。連絡したら ✅ を返信。</div>
 <ol class="steps">
 <li>{b("Install Telegram (free) on the phone of the person who answers requests.", "Поставить Telegram (бесплатно) на телефон того, кто отвечает на заявки.", "span")}</li>
 <li>{b("Open the invite link we send you — you are in the group.", "Открыть ссылку-приглашение, которую мы пришлём, — и вы в группе.", "span")}</li>
