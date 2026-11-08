@@ -76,6 +76,8 @@ NEED = [
   "Сайт: пригласить нас в Netlify (1 минута) или вставить код самим. Инструкция: <a href=\"../meta-pixel/\">страница про код сайта</a>. Нужно только для проверки формы сайта со 2-й недели."),
  ("Check your email: did our test request from the website (name テスト送信（連絡不要）, Nov 5) arrive?",
   "Проверить почту: пришла ли наша тестовая заявка с сайта (имя テスト送信（連絡不要）, 5 ноября)?"),
+ ("Join our Telegram group for requests (link in chat) — or tell us if your team prefers LINE.",
+  "Вступить в нашу группу заявок в Telegram (ссылка в чате) или сказать, если команде удобнее LINE."),
  ("Install the free <b>Meta Business Suite</b> app on the phone of the person who answers requests and turn on notifications — new requests and Instagram messages will pop up there.",
   "Поставить бесплатное приложение <b>Meta Business Suite</b> на телефон того, кто отвечает на заявки, и включить уведомления — туда будут приходить новые заявки и сообщения из Instagram."),
 ]
@@ -110,6 +112,8 @@ ul.need input{{width:20px;height:20px;margin-top:3px;flex:none;accent-color:#111
 .two h3{{margin-top:0}}
 .script{{background:#111;color:#fff;border-radius:16px;padding:16px;margin-top:8px}} .script .ja{{font:16px/1.7 'Noto Sans JP';color:#fff}} .script p{{color:#cfcfcf;font-size:14px;margin-top:6px}}
 table{{width:100%;border-collapse:collapse;font-size:15px}} th,td{{text-align:left;padding:8px;border-bottom:1px solid #e5e5e5;vertical-align:top}} th{{color:var(--muted);font-weight:600}}
+
+.tg{{margin-top:16px;border:2px solid var(--green);border-radius:16px;padding:14px}} .tg h3{{margin-top:0}} .msg{{background:#e9f7d2;border-radius:12px;padding:10px 12px;font:14px/1.6 'Noto Sans JP',Inter;margin:8px 0 12px}}
 .tw{{overflow-x:auto}}
 .ads{{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}}
 .ad{{background:var(--card);border-radius:20px;padding:14px;display:grid;grid-template-columns:200px 1fr;gap:14px}}
@@ -139,7 +143,7 @@ footer{{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}}
 <ol class="steps">
 <li>{b("A person near the gym sees our ad in Instagram or Facebook.", "Человек рядом с клубом видит наше объявление в Instagram или Facebook.", "span")}</li>
 <li>{b("Taps «予約する» (Book). A short form opens inside Instagram — name, phone, email fill in automatically, they choose a program.", "Нажимает «予約する» (Забронировать). Прямо в Instagram открывается короткая форма: имя, телефон, почта подставляются сами, человек выбирает программу.", "span")}</li>
-<li>{b("The request arrives to you (section 2). <b>You contact the person within 1 hour</b> and book a trial.", "Заявка приходит вам (раздел 2). <b>Вы связываетесь с человеком в течение часа</b> и записываете на пробное.", "span")}</li>
+<li>{b("The request arrives in our Telegram group (section 2). <b>You contact the person within 1 hour</b> and book a trial.", "Заявка приходит в нашу группу Telegram (раздел 2). <b>Вы связываетесь с человеком в течение часа</b> и записываете на пробное.", "span")}</li>
 <li>{b("Trial → membership. You mark who came and who joined — this tells us which ad brings real members.", "Пробное → абонемент. Вы отмечаете, кто пришёл и кто купил: так мы видим, какое объявление приводит настоящих клиентов.", "span")}</li>
 </ol>
 <h3>{b("What to expect", "Чего ожидать", "span")}</h3>
@@ -163,6 +167,18 @@ footer{{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}}
    "Приходит так же, как сейчас: форма на totalfitnoah.com присылает её <b>на почту клуба</b>.")}
 {b("To know the request came from an ad, we add a code to the website (section 4). Without it Meta cannot learn from website requests.",
    "Чтобы понимать, что заявка пришла из рекламы, на сайт ставится код (раздел 4). Без него Meta не учится на заявках с сайта.")}</div>
+</div>
+<div class="tg">{b("All requests in one place: a Telegram group", "Все заявки в одном месте: группа в Telegram", "h3")}
+{b("Every new request — from the Instagram form <b>and</b> from the website — comes as a message to one Telegram group «TOTALFIT NOAH — requests». We set it up; you only join.",
+   "Каждая новая заявка — и из формы Instagram, <b>и</b> с сайта — приходит сообщением в одну группу Telegram «TOTALFIT NOAH — заявки». Мы её настраиваем, вам нужно только вступить.")}
+<div class="msg"><b>🟢 New request · Instagram · T4</b><br>山田 花子 · 090-xxxx-xxxx · hanako@…<br>Program: キックボクシング<br>11/10 14:32</div>
+<ol class="steps">
+<li>{b("Install Telegram (free) on the phone of the person who answers requests.", "Поставить Telegram (бесплатно) на телефон того, кто отвечает на заявки.", "span")}</li>
+<li>{b("Open the invite link we send you — you are in the group.", "Открыть ссылку-приглашение, которую мы пришлём, — и вы в группе.", "span")}</li>
+<li>{b("When you contact the person, reply to the message with ✅ — everyone sees the request is taken. Booked a trial — reply with the date.", "Когда связались с человеком, ответьте на сообщение ✅ — все видят, что заявку взяли. Записали на пробное — ответьте датой.", "span")}</li>
+</ol>
+{b("Requests also stay in Meta Business Suite and in the website email as a backup. If your team works only in LINE, tell us — we can send the same messages to a LINE group instead.",
+   "Заявки при этом остаются и в Meta Business Suite, и на почте сайта — как запасной вариант. Если команда работает только в LINE, скажите: те же сообщения можно слать в группу LINE.", cls="note")}
 </div>
 {b("Also: people may write to Instagram Direct or comment on an ad. Please answer them the same day — it is a request too.",
    "Кроме того: люди могут писать в Директ Instagram или комментировать объявление. Отвечайте им в тот же день — это тоже заявка.", cls="note")}
