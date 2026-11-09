@@ -110,7 +110,7 @@ for num, title, feed, reels, ja, ru, hja, hru in ADS:
 page = f"""<!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TOTALFIT NOAH — тест 8 объявлений</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#F4F4EF;--ink:#111;--muted:#666;--card:#fff;--green:#B2FF00}}
 *{{box-sizing:border-box;margin:0}}
