@@ -6,6 +6,7 @@
 :root{--bg:#F4F4EF;--ink:#111;--muted:#666;--card:#fff;--green:#B2FF00}
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,'Noto Sans JP',sans-serif;padding:0 16px 48px}
+.brandbar{background:#111;margin:0 -16px;padding:12px 16px}.brandbar img{height:28px;width:auto;display:block;max-width:1100px;margin:0 auto}
 header{max-width:1100px;margin:0 auto;padding:32px 0 8px}
 header h1{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.02em}
 header p{color:var(--muted);margin-top:8px;max-width:720px}
@@ -21,7 +22,7 @@ figure{margin:0} figcaption{font-size:13px;color:var(--muted);margin-bottom:6px}
 .screen{background:#000;border-radius:22px;overflow:hidden;border:6px solid #111}
 .feed .screen{background:#fff}
 .top{display:flex;align-items:center;gap:8px;padding:10px;font-size:13px}
-.ava{width:28px;height:28px;border-radius:50%;background:#111 url(img/T1-c01-coach-pads-feed.jpg) center/cover}
+.ava{width:28px;height:28px;border-radius:50%;background:#111 url(logo.svg) center/80% no-repeat}
 .spon{color:var(--muted);font-size:12px}
 .txt{font:13px/1.5 'Noto Sans JP';padding:0 10px 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .pic{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
@@ -51,6 +52,7 @@ details{margin-top:10px;background:var(--bg);border-radius:12px;padding:10px 12p
 @media (max-width:860px){.mocks{grid-template-columns:1fr 1fr}.tr{grid-column:1/-1}}
 @media (max-width:520px){.mocks{grid-template-columns:1fr}.reels{max-width:240px}}
 </style></head><body>
+<div class="brandbar"><img src="logo.svg" alt="TOTALFIT NOAH"></div>
 <header>
 <h1>Тест рекламы: путь, правила, 8 объявлений</h1>
 <p>План первого теста на утверждение. Объявления ниже уже собраны в рекламном кабинете клуба. Кампания выключена и ничего не показывает, пока её не включат.</p>
@@ -127,7 +129,7 @@ details{margin-top:10px;background:var(--bg);border-radius:12px;padding:10px 12p
 <li><b>День 8.</b> Первые выводы по правилам выше: оставляем 3–4 лучших, остальные выключаем. Клуб присылает, кто из заявок пришёл на пробное.</li>
 <li><b>Неделя 2.</b> Добавляем 2–3 варианта победителя. Если код Meta уже на сайте — запускаем путь Б с 2 лучшими картинками, бюджет пополам.</li>
 <li><b>Недели 3–4.</b> Оставляем лучший путь и лучшие картинки, наращиваем бюджет. Следующие гипотезы: запись через LINE, англоязычная группа, люди 50+ на настольный теннис, детские танцы отдельной группой.</li>
-<li><b>Через месяц.</b> Пересчитываем план «130 клиентов за полгода» по своим цифрам: цена заявки, доля пришедших, доля купивших.</li>
+<li><b>Через месяц.</b> Подводим итоги по своим цифрам: цена заявки, доля пришедших, доля купивших.</li>
 </ol>
 </section>
 
