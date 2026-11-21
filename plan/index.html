@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TOTALFIT NOAH: как приводить людей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3ef;--card:#fff;--ink:#16181b;--mute:#5d636b;--line:#e3e1da;--acc:#1f7a4d;--acc-soft:#e3f1e9;--warn:#a5520f;--warn-soft:#fbefe2}
+@media (prefers-color-scheme:dark){:root{--bg:#121416;--card:#1b1e21;--ink:#eceae4;--mute:#9aa1a9;--line:#2b2f33;--acc:#5fc792;--acc-soft:#1d3127;--warn:#f0a565;--warn-soft:#352719}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif}
+.jp{font-family:"Noto Sans JP",sans-serif}
+header{padding:28px 16px 8px;max-width:760px;margin:0 auto}
+header small{color:var(--mute);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
+h1{font-size:28px;line-height:1.15;margin:6px 0 4px;font-weight:800;letter-spacing:-.02em}
+header p{margin:0;color:var(--mute)}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .in{max-width:760px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav .in::-webkit-scrollbar{display:none}
+nav button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 14px Manrope,sans-serif;padding:8px 14px;border-radius:999px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:18px 16px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:22px;margin:4px 0 12px;letter-spacing:-.01em}
+h3{font-size:17px;margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 12px}
+.lead{font-size:17px}
+.mute{color:var(--mute)}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0 0 12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font-size:24px;font-weight:800}
+.stat span{color:var(--mute);font-size:14px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--acc-soft);color:var(--acc);margin-bottom:6px}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 10px}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--mute);font-weight:400}
+details[open] summary::after{content:"−"}
+details>div{padding:0 16px 14px}
+.phrase{border-left:3px solid var(--acc);padding:8px 12px;margin:8px 0;background:var(--acc-soft);border-radius:0 10px 10px 0}
+.phrase .jp{font-size:16px}
+.phrase .ru{color:var(--mute);font-size:14px;margin-top:4px}
+.copy{float:right;border:0;background:transparent;color:var(--acc);font:600 13px Manrope,sans-serif;cursor:pointer;padding:0 0 0 8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-weight:600}
+.tw{overflow-x:auto}
+.kw{display:flex;flex-wrap:wrap;gap:6px}
+.kw span{border:1px solid var(--line);border-radius:8px;padding:3px 8px;font-size:14px;background:var(--card)}
+a{color:var(--acc)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <small>TOTALFIT NOAH · 21.11.2026</small>
+  <h1>Как приводить людей в клуб</h1>
+  <p>Реклама, LINE, Google Карты, «Приведи друга», листовки. Каждая вкладка: что делаем и что нужно от клуба.</p>
+</header>
+<nav><div class="in" role="tablist">
+  <button role="tab" data-t="main" aria-selected="true">Главное</button>
+  <button role="tab" data-t="line">LINE</button>
+  <button role="tab" data-t="google">Google</button>
+  <button role="tab" data-t="friend">Приведи друга</button>
+  <button role="tab" data-t="flyer">Листовки</button>
+</div></nav>
+<main>
+
+<section id="main" class="on">
+  <h2>Где мы сейчас</h2>
+  <div class="grid">
+    <div class="stat"><b>3</b><span>кампании в Instagram и Facebook идут</span></div>
+    <div class="stat"><b>3</b><span>заявки через анкету с 10.11</span></div>
+    <div class="stat"><b>43</b><span>нажатия за полдня 21.11</span></div>
+  </div>
+  <div class="card">
+    <span class="tag w">Главная дыра</span>
+    <h3>Мы не видим, что происходит после перехода в LINE</h3>
+    <p class="mute">Человек нажимает кнопку, попадает в LINE клуба, и дальше мы слепые: написал он или нет, записался ли. Пока этого не видно, нельзя понять, какая реклама приводит клиентов, а какая тратит деньги.</p>
+  </div>
+  <h2>Что нужно от клуба</h2>
+  <div class="card">
+    <ol>
+      <li><b>Цифры из LINE с 10.11:</b> сколько новых друзей, сколько написали, сколько пришли на пробное и купили.</li>
+      <li><b>Доступ к кабинету LINE</b>, чтобы считать это самим каждый день. Как дать, во вкладке «LINE».</li>
+      <li><b>Доступ к профилю в Google Картах.</b> Как дать, во вкладке «Google».</li>
+      <li><b>Выбрать награду</b> за приведённого друга, вариант А или Б.</li>
+      <li><b>Узнать</b>, можно ли раздавать листовки у станции 本郷台.</li>
+    </ol>
+  </div>
+  <h2>Что делаем дальше</h2>
+  <div class="card">
+    <ul>
+      <li>До 28.11 рекламу не трогаем: Meta заново учится после паузы.</li>
+      <li>28.11 сравниваем анкету и LINE и отдаём бюджет тому, что дешевле приводит людей на пробное.</li>
+      <li>Google Карты и отдельные ссылки LINE для каждой рекламы: сразу после доступа.</li>
+      <li>Реклама в поиске Google: после того как поправим сайт и Карты.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="line">
+  <h2>LINE: видеть, кто написал</h2>
+  <p class="lead">Половина рекламы ведёт в LINE клуба. Всё, что нужно для подсчёта, уже есть в кабинете LINE, нужен только доступ.</p>
+  <div class="card">
+    <span class="tag">Что сделаем с доступом</span>
+    <ul>
+      <li>Каждое утро считать: сколько добавились в друзья и сколько написали.</li>
+      <li>Сделать отдельную ссылку для каждой рекламы (взрослые, дети, листовки), чтобы видеть, откуда пришёл человек.</li>
+      <li>Настроить приветствие, меню и автоответы.</li>
+    </ul>
+    <p class="mute">Переписку с клиентами ведёт клуб, мы не отвечаем людям.</p>
+  </div>
+  <details open><summary>Как дать доступ (2 минуты)</summary><div>
+    <ol>
+      <li>Открыть кабинет LINE Official Account Manager клуба.</li>
+      <li class="jp">設定 → 権限管理 → メンバーを追加</li>
+      <li>Роль: <span class="jp">運用担当者（配信権限なし）</span>. С ней нельзя делать рассылки клиентам, только настройки и цифры.</li>
+      <li>Появится ссылка-приглашение. Прислать её нам, она действует 24 часа.</li>
+    </ol>
+  </div></details>
+  <details><summary>Что поправить уже сейчас, даже без нас</summary><div>
+    <ul>
+      <li><b>Приветствие новому другу</b> с кнопкой записи. Многие добавляются и молчат, потому что не знают, что написать.</li>
+      <li><b>Меню внизу чата:</b> запись, расписание, цены, как добраться.</li>
+      <li><b>Автоответ</b> на слова <span class="jp">体験</span> и <span class="jp">予約</span>.</li>
+      <li>При записи <b>спрашивать</b>, откуда человек узнал о клубе.</li>
+    </ul>
+    <p>Пример приветствия:</p>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">友だち追加ありがとうございます！TOTALFIT NOAHです。無料体験のご予約は、下のメニューの「無料体験を予約」から、またはこのトークに「体験」と送ってください。</div><div class="ru">Спасибо, что добавили нас! Это TOTALFIT NOAH. Записаться на бесплатное пробное можно кнопкой в меню или написав сюда слово «体験».</div></div>
+  </div></details>
+  <details><summary>А реклама внутри LINE бывает?</summary><div>
+    <p>Да, платная реклама LINE (объявления «добавьте в друзья»). Подключать её стоит позже, когда по Instagram и Facebook станет понятно, сколько стоит один клиент.</p>
+  </div></details>
+</section>
+
+<section id="google">
+  <h2>Google: Карты и реклама в поиске</h2>
+  <div class="card">
+    <span class="tag">Шаг 1, бесплатно</span>
+    <h3>Google Карты</h3>
+    <p>Зал ищут на картах рядом с домом. Профиль в Картах ничего не стоит, платить нужно только за рекламу. Сейчас клуб по району на шестом месте и с одним отзывом.</p>
+    <ul>
+      <li>Правильный вид заведения (ジム или フィットネスクラブ), часы, цены, кнопка записи в LINE.</li>
+      <li>Отзывы: QR-код на ресепшене, просить после пробного, отвечать на каждый. Цель: 10-20 отзывов.</li>
+      <li>Раз в неделю новые фото и короткий пост.</li>
+    </ul>
+  </div>
+  <details open><summary>Как дать доступ к Картам</summary><div>
+    <ol><li>Профиль клуба в Google → «Доступ к профилю» (<span class="jp">プロフィールへのアクセス</span>).</li><li>«Добавить», роль «Менеджер».</li><li>Почту для приглашения пришлём.</li></ol>
+  </div></details>
+
+  <div class="card">
+    <span class="tag w">Шаг 2, после Карт и сайта</span>
+    <h3>Реклама в поиске Google</h3>
+    <p>Её видят только те, кто сам ищет зал рядом. С чем заходим: <b>бесплатное пробное с пустыми руками</b> для взрослых и <b>хип-хоп за ¥500</b> для детей. У соседей пробное стоит ¥2 200-5 500 (≈$14-35).</p>
+    <ul>
+      <li>Две рекламы: взрослые и дети, всего около ¥1 000 (≈$6) в день.</li>
+      <li>Радиус около 5 км, показ вечером в будни и в выходные.</li>
+      <li>Ожидаем 150-350 переходов в месяц. Это оценка, точнее скажет планировщик Google.</li>
+      <li>В тексте упор на парковку: от станции 15 минут пешком.</li>
+    </ul>
+  </div>
+  <details><summary>Что поправить на сайте до рекламы</summary><div>
+    <ul>
+      <li>Кнопка LINE на сайте.</li>
+      <li>Расписание и часы работы текстом, а не только картинкой.</li>
+      <li>На детской странице кнопка говорит «бесплатно» (<span class="jp">無料体験を予約</span>), а пробное стоит ¥500.</li>
+      <li>Страница про HYROX: без неё HYROX в рекламе не упоминаем.</li>
+      <li>Мелочи: внизу © 2024, в подписи к фото старое название <span class="jp">のあジム</span>.</li>
+    </ul>
+  </div></details>
+  <details><summary>Конкуренты рядом</summary><div class="tw">
+    <table>
+      <tr><th>Клуб</th><th>В месяц</th><th>Пробное</th></tr>
+      <tr><td>Central 本郷台</td><td>≈¥6 600 (≈$43)</td><td>есть, взнос отменён при онлайн-вступлении</td></tr>
+      <tr><td>Curves 本郷台 (женский)</td><td>¥6 820 (≈$44), взнос ¥16 500</td><td>15 визитов бесплатно до 30.11</td></tr>
+      <tr><td>Kamakura Training Garage (大船, HYROX)</td><td>¥14 000 (≈$90)</td><td>цена не указана</td></tr>
+      <tr><td>Gold's Gym 戸塚</td><td>¥10 500-14 000</td><td>¥5 500 (≈$35)</td></tr>
+      <tr><td>Fit Box 本郷台</td><td>от ¥6 600, взнос ¥5 500</td><td>есть</td></tr>
+      <tr><td>chocoZAP</td><td>¥3 278 (≈$21)</td><td>нет</td></tr>
+      <tr><td>Shimamura, детский хип-хоп</td><td>¥6 050, взнос ¥6 600</td><td>¥2 200 (≈$14)</td></tr>
+      <tr><td><b>TOTALFIT NOAH</b></td><td><b>¥7 700 (≈$50)</b>, семья ¥11 000</td><td><b>бесплатно</b>, дети ¥500</td></tr>
+    </table>
+    <p class="mute">HYROX в районе почти ни у кого нет, ближайший зал в Офуна. Цены из открытых источников на 21.11, могли измениться.</p>
+  </div></details>
+  <details><summary>По каким запросам показываться</summary><div>
+    <div class="kw jp"><span>本郷台 ジム</span><span>栄区 ジム</span><span>栄区 フィットネス</span><span>栄区 ジム 体験</span><span>栄区 無料体験 ジム</span><span>港南台 ジム</span><span>大船 パーソナルジム</span><span>栄区 ピラティス</span><span>栄区 キックボクシング</span><span>横浜 HYROX</span><span>キッズダンス 栄区</span><span>本郷台 キッズダンス</span><span>栄区 子供 ヒップホップ 体験</span><span>大船 子供 ダンス</span></div>
+    <p class="mute">Исключаем вакансии, курсы тренеров, бассейны, массаж и названия сетей.</p>
+  </div></details>
+</section>
+
+<section id="friend">
+  <h2>Приведи друга</h2>
+  <p class="lead">Участник даёт другу карточку. Друг приходит на бесплатное пробное. Награду платим только когда друг купил абонемент.</p>
+  <div class="tw card"><table>
+    <tr><th></th><th>А. Неделя в подарок</th><th>Б. Тренировка вдвоём</th></tr>
+    <tr><td>Другу</td><td>7 дней бесплатно после пробного</td><td>пробное вместе с пригласившим, ¥1 000 скидки на первый месяц</td></tr>
+    <tr><td>Пригласившему</td><td>−50% на месяц: ¥3 850 (≈$24)</td><td>¥1 000 (≈$6) скидки</td></tr>
+    <tr><td>Цена для клуба</td><td>до ¥3 850 за купившего</td><td>до ¥2 000 за купившего</td></tr>
+  </table></div>
+  <details open><summary>Когда предлагать</summary><div>
+    <ol><li>Сразу после пробного, пока человек доволен.</li><li>На 2-4 неделе, когда ходит регулярно.</li><li>После хорошей тренировки.</li><li>При продлении абонемента.</li></ol>
+    <p class="mute">Не предлагать недовольным, новичку в первые минуты и детям (говорим с родителем). Один раз «нет», больше в этот день не зовём.</p>
+  </div></details>
+  <details><summary>Готовые фразы для персонала</summary><div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">今日の体験、いかがでしたか？もしよければ、一緒に運動したいお友達やご家族に、ぜひ声をかけてみてください。お友達も無料で体験できますよ。</div><div class="ru">После пробного: как прошло? Позовите друга или родных, они тоже могут попробовать бесплатно.</div></div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">最近、動きがとてもよくなってきましたね。お友達と一緒に来ると、続けやすいという方もいらっしゃいます。よかったら、紹介カードをお渡ししましょうか？</div><div class="ru">На 2-4 неделе: вы стали двигаться лучше. С другом легче не бросать. Дать карточку для друга?</div></div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">今日もお疲れさまでした！気持ちよく動けましたね。お友達にも紹介したいなと思ったら、いつでも声をかけてください。</div><div class="ru">После тренировки: спасибо за работу! Захотите позвать друга, просто скажите.</div></div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">いつもありがとうございます。お友達をご紹介いただいた方には、ささやかな特典もご用意しています。よければ、お伝えください。</div><div class="ru">При продлении: спасибо, что вы с нами. За приведённого друга есть небольшая награда.</div></div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">大丈夫ですよ。また気が向いたら、いつでもおっしゃってください。</div><div class="ru">Если «нет»: ничего страшного, скажите, когда захотите.</div></div>
+  </div></details>
+  <details><summary>Как отмечать и считать</summary><div>
+    <ol>
+      <li>У каждой карточки свой код (TF-012). Персонал записывает, кому какой выдал.</li>
+      <li>Друг пишет в LINE и называет код или имя того, кто пригласил.</li>
+      <li>Таблица, одна строка на друга: дата, код, кто пригласил, написал в LINE, пришёл, купил, награда выдана.</li>
+      <li>По понедельникам 10 минут: сколько карточек выдали, сколько друзей написало, пришло, купило.</li>
+    </ol>
+    <p class="mute">Через 4 недели: если купили меньше трёх друзей, меняем фразы или награду.</p>
+  </div></details>
+  <details><summary>Чего не делать</summary><div>
+    <ul><li>Давить и звать повторно в тот же день.</li><li>Обещать детям бесплатное пробное: оно ¥500.</li><li>Выдавать награду до покупки абонемента.</li><li>Просить посты и отзывы за награду без пометки (в Японии это скрытая реклама, <span class="jp">ステマ規制</span>).</li></ul>
+  </div></details>
+</section>
+
+<section id="flyer">
+  <h2>Листовки</h2>
+  <p class="lead">Три листовки, у каждой свой QR-код на LINE. Так видно, какая сработала.</p>
+  <details open><summary>А. Бесплатное пробное, станция и дома · 500 шт.</summary><div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">本郷台で、はじめてのジム。体験は無料です。<br>グループレッスンと機能的トレーニング。トレーナーがそばにつくので、運動が久しぶりでも大丈夫です。LINEから、1分で予約できます。</div><div class="ru">Первый зал рядом с домом. Пробное бесплатно. Тренер рядом, можно после долгого перерыва. Запись в LINE за минуту.</div></div>
+    <p><b>Где:</b> у станции в будни 7:30-9:00 и 17:30-19:00 (только с разрешением), по почтовым ящикам в субботу. На обороте QR, адрес, карта, парковка, расписание.</p>
+  </div></details>
+  <details><summary>Б. Детский хип-хоп ¥500 · 300 шт.</summary><div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">キッズ・ヒップホップ。体験は500円です。<br>3歳から13歳のお子さま向けのダンスクラスです。はじめてのお子さまも大歓迎です。体験のご予約は、LINEから。</div><div class="ru">Детский хип-хоп, пробное ¥500. Дети 3-13 лет, новичков ждём. Запись в LINE.</div></div>
+    <p><b>Где:</b> стопки в местах, куда ходят родители (кафе, парикмахерская, детская поликлиника), с разрешения хозяина. Не на территории школ. На обороте только дни, где есть места.</p>
+  </div></details>
+  <details><summary>В. Карточка «Приведи друга» · 200 шт.</summary><div>
+    <div class="phrase"><button class="copy">Копировать</button><div class="jp">お友達紹介カード　ご紹介者：＿＿＿＿さま<br>このカードを見せると、無料体験にご招待します。LINEで、紹介コードをお知らせください。</div><div class="ru">Карточка «Приведи друга», от кого: ___. Покажите её, и вас пригласят на бесплатное пробное. Назовите код в LINE.</div></div>
+    <p><b>Как:</b> визитка, выдаёт персонал участнику по 5 штук, на улице не раздаём.</p>
+  </div></details>
+  <div class="card">
+    <span class="tag w">Решить до печати</span>
+    <ol><li>Вариант награды и дата окончания акции.</li><li>Разрешение на раздачу у станции.</li><li>Согласие родителей на фото детей.</li><li>Можно ли писать про HYROX и <span class="jp">手ぶらでOK</span>.</li><li>Сотрудник клуба вычитывает японский текст.</li></ol>
+    <p class="mute">Отклик у листовок обычно около 1%: 500 штук дают 2-8 новых друзей в LINE. Печать всех трёх примерно ¥5 000-10 000 (≈$32-63).</p>
+  </div>
+</section>
+</main>
+<footer>Обновлено 21.11.2026</footer>
+<script>
+const tabs=document.querySelectorAll('nav button'),secs=document.querySelectorAll('section');
+function show(id){tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));secs.forEach(s=>s.classList.toggle('on',s.id===id));try{history.replaceState(null,'','#'+id)}catch(e){}scrollTo({top:0})}
+tabs.forEach(b=>b.onclick=()=>show(b.dataset.t));
+const h=location.hash.slice(1);if(document.getElementById(h))show(h);
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.nextElementSibling.innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent='Скопировано';setTimeout(()=>b.textContent='Копировать',1500)})});
+</script>
+</body>
+</html>
