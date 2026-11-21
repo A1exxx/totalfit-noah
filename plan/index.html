@@ -258,6 +258,7 @@ const tabs=document.querySelectorAll('nav button'),secs=document.querySelectorAl
 function show(id){tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));secs.forEach(s=>s.classList.toggle('on',s.id===id));try{history.replaceState(null,'','#'+id)}catch(e){}scrollTo({top:0})}
 tabs.forEach(b=>b.onclick=()=>show(b.dataset.t));
 const h=location.hash.slice(1);if(document.getElementById(h))show(h);
+addEventListener('hashchange',()=>{const k=location.hash.slice(1);if(document.getElementById(k))show(k)});
 document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.nextElementSibling.innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent='Скопировано';setTimeout(()=>b.textContent='Копировать',1500)})});
 </script>
 </body>
