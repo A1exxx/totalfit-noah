@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOTALFIT NOAH: LINE setup</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F4EF;--ink:#111;--muted:#5f5f5f;--card:#fff;--green:#B2FF00;--line:#06C755}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,'Noto Sans JP',sans-serif;padding:0 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{padding:36px 0 20px}
+h1{font:900 30px/1.15 Inter,'Noto Sans JP';letter-spacing:-.02em}
+.lead{margin-top:14px;color:#333}
+.why{margin-top:18px;background:var(--ink);color:#fff;border-radius:16px;padding:18px 20px}
+.why b{color:var(--green)}
+.step{background:var(--card);border-radius:18px;padding:22px 20px;margin-top:16px}
+.num{display:inline-block;background:var(--green);font:900 14px/1 Inter;padding:7px 11px;border-radius:999px;margin-bottom:10px}
+h2{font:800 21px/1.25 Inter,'Noto Sans JP'}
+.step p,.step li{margin-top:8px}
+ol{padding-left:22px}
+.path{font-weight:600}
+.jp{font-family:'Noto Sans JP',sans-serif}
+.copy{position:relative;margin-top:12px;background:#F4F4EF;border-radius:12px;padding:16px 16px 52px;white-space:pre-wrap;font:500 15px/1.7 'Noto Sans JP',sans-serif}
+.copy button{position:absolute;right:10px;bottom:10px;border:0;background:var(--ink);color:#fff;font:700 14px Inter;padding:9px 14px;border-radius:999px;cursor:pointer}
+.copy button.ok{background:var(--line)}
+img{display:block;width:100%;border-radius:12px;margin-top:12px}
+.dl{display:inline-block;margin-top:10px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px Inter;padding:12px 18px;border-radius:999px}
+.note{color:var(--muted);font-size:14px}
+.check li{list-style:none;margin-left:-22px;padding-left:30px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border:2px solid var(--ink);border-radius:5px}
+</style></head><body><div class="wrap">
+
+<header>
+<h1>LINE: turn new friends into trial bookings</h1>
+<p class="lead">About 30 minutes in the LINE Official Account Manager app. Everything below is free.</p>
+<div class="why">Since Nov 21 more than <b>120 people</b> tapped the ads and went to your LINE. Nobody wrote. The reason: after adding you, people see the default text "we will send news" and there is nothing to tap. We fix this with one button at the bottom of the chat.</div>
+</header>
+
+<section class="step">
+<span class="num">STEP 1</span>
+<h2>Add a "Book a free trial" button (rich menu)</h2>
+<p>This is a big button under the chat. One tap sends the message "I want to book a free trial" for the person, they don't have to type anything.</p>
+<img src="menu-2.png" alt="Rich menu: left half Book a free trial, right half Prices and timetable">
+<a class="dl" href="menu-2.png" download>Download this image</a>
+<ol>
+<li class="path">Home → Rich menu (リッチメニュー) → Create</li>
+<li>Title: <span class="jp">無料体験</span>. Display period: from today, end date far away (e.g. 2027).</li>
+<li>Template: size <b>Small</b> (小), the one with <b>2 equal halves</b>. Upload the image above.</li>
+<li>Area A (left, green): type <b>Text</b> (テキスト). Paste:
+<div class="copy jp">無料体験を予約したいです<button>Copy</button></div></li>
+<li>Area B (right, black): type <b>Link</b> (リンク): <span class="jp">https://totalfitnoah.com/</span></li>
+<li>Menu bar text (メニューバーのテキスト): <b>Other</b> (その他), paste:
+<div class="copy jp">無料体験の予約はこちら<button>Copy</button></div></li>
+<li>Default display (メニューのデフォルト表示): <b>Show</b> (表示する). Save.</li>
+</ol>
+</section>
+
+<section class="step">
+<span class="num">STEP 2</span>
+<h2>Instant reply when someone taps the button</h2>
+<p>So the person gets an answer in a second, even at night. Your staff then confirms the date.</p>
+<ol>
+<li class="path">Settings → Response settings (応答設定): Chat <b>ON</b>, Greeting message <b>ON</b>, Auto-response (応答メッセージ) <b>ON</b>.</li>
+<li class="path">Home → Auto-response (応答メッセージ) → Create</li>
+<li>Keywords: <span class="jp">無料体験を予約したいです</span>, <span class="jp">体験</span>, <span class="jp">予約</span></li>
+<li>Message:
+<div class="copy">お問い合わせありがとうございます！TOTALFIT NOAHです。
+無料体験のご予約を承ります。次の2つを教えてください。
+
+1. 体験したいクラス（キックボクシング／ピラティス／フィットネス／卓球／キッズ）
+2. ご希望の日にちと時間帯
+
+スタッフから確認のご連絡をします。
+※キッズダンスの体験は500円です。<button>Copy</button></div></li>
+</ol>
+</section>
+
+<section class="step">
+<span class="num">STEP 3</span>
+<h2>New greeting message</h2>
+<ol>
+<li class="path">Home → Greeting message (あいさつメッセージ)</li>
+<li>Delete the old text. At the start insert the friend's name with the button <b>Friend's display name</b> (友だちの表示名), then paste:
+<div class="copy">さん、友だち追加ありがとうございます！TOTALFIT NOAHです。
+
+無料体験は、画面下の「無料体験を予約する」をタップするだけで予約できます。
+このトークに直接メッセージしてもOKです。
+
+手ぶらでOK、初めての方も大歓迎です。<button>Copy</button></div></li>
+</ol>
+</section>
+
+<section class="step">
+<span class="num">STEP 4</span>
+<h2>Send one message to your 95 friends</h2>
+<p>Many of them came from the ads and are still waiting. Do this after steps 1 to 3, so they see the button.</p>
+<ol>
+<li class="path">Home → Broadcast (メッセージ配信) → Create → Send to all friends</li>
+<li>Paste:
+<div class="copy">TOTALFIT NOAHです。友だち追加ありがとうございます！
+
+無料体験、受付中です。
+キックボクシング・ピラティス・フィットネス・卓球、どれでも1回無料で体験できます。手ぶらでOKです。
+
+ご予約は画面下の「無料体験を予約する」をタップするだけ。<button>Copy</button></div></li>
+</ol>
+<p class="note">The free LINE plan includes 200 messages a month, so 95 friends costs nothing.</p>
+</section>
+
+<section class="step">
+<span class="num">STEP 5</span>
+<h2>Profile picture: the logo</h2>
+<p>Right now it is the timetable, it's too small to read on a phone. Put the TOTALFIT logo instead: <span class="path">Home → Profile → Profile image</span>.</p>
+</section>
+
+<section class="step">
+<h2>Done? Check it</h2>
+<ul class="check">
+<li>Open <span class="jp">https://lin.ee/UEdMA2n1</span> on a personal phone, the green button is under the chat</li>
+<li>Tap it: the message is sent and the instant reply comes back</li>
+<li>Write back to every booking within 1 hour</li>
+<li>Every Monday send us: how many wrote, how many booked, how many came</li>
+</ul>
+</section>
+
+</div>
+<script>
+document.querySelectorAll('.copy button').forEach(b=>b.onclick=async()=>{
+ const t=b.parentElement.childNodes[0].textContent.trim();
+ try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+ b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1500)});
+</script>
+</body></html>
