@@ -108,7 +108,7 @@ a{color:var(--accent)}
 
 </head><body>
 <div class="demo"><div class="wrap">
-  <span>Demo for review. Bookings are not sent anywhere yet.</span>
+  <span>Test mode: bookings are saved, emails are not sent yet.</span>
   <span class="seg" role="group" aria-label="View">
     <button id="v-page" aria-pressed="true">Page</button>
     <button id="v-mail" aria-pressed="false">Email</button>
@@ -137,6 +137,7 @@ a{color:var(--accent)}
         <label for="ph">電話番号<input id="ph" type="tel" autocomplete="tel" placeholder="090-1234-5678" required></label>
         <label for="em">メールアドレス <span class="hint">予約の確認メールをお送りします</span><input id="em" type="email" autocomplete="email" placeholder="hanako@example.jp" required></label>
         <label for="ms">ご質問・ご要望 <span class="hint">任意</span><textarea id="ms" rows="2" placeholder="例：運動は久しぶりです"></textarea></label>
+        <input id="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
         <p class="empty" id="err" role="alert" hidden></p>
         <button class="btn" type="submit" id="go" aria-disabled="true">この内容で予約する</button>
       </form>
@@ -202,60 +203,73 @@ a{color:var(--accent)}
 
 <script>
 (function(){
-  // Real timetable from totalfitnoah.com (from July 2026). day: 0=Sun..6=Sat
-  var C={
-    kick:{ja:"キックボクシング",sub:"初心者OK",fee:"無料",t:[[1,"14:00","15:00"],[2,"19:00","21:00"],[3,"14:00","15:00"],[5,"14:00","15:00"],[5,"17:00","18:00"],[6,"18:00","21:00"]]},
+  var API="https://tfnleads.84-247-148-135.sslip.io/b";
+  // Fallback: real timetable from totalfitnoah.com, used only if the server does not answer
+  var FB={kick:{ja:"キックボクシング",sub:"初心者OK",fee:"無料",t:[[1,"14:00","15:00"],[2,"19:00","21:00"],[3,"14:00","15:00"],[5,"14:00","15:00"],[5,"17:00","18:00"],[6,"18:00","21:00"]]},
     pil:{ja:"ピラティス",sub:"マット",fee:"無料",t:[[1,"17:30","18:30"],[2,"10:30","11:30"],[4,"10:30","11:30"],[4,"17:30","18:30"],[6,"10:30","11:30"]]},
     fit:{ja:"フィットネス",sub:"グループ",fee:"無料",t:[[1,"10:30","11:30"],[1,"19:30","20:30"],[3,"10:30","11:30"],[3,"19:30","20:30"],[4,"19:30","20:30"],[5,"10:30","11:30"],[5,"19:30","20:30"]]},
     tt:{ja:"卓球",sub:"日曜",fee:"無料",t:[[0,"18:00","20:00"]]},
-    dance:{ja:"キッズダンス",sub:"3〜15歳・¥500",fee:"¥500",t:[[2,"16:00","16:45","園児"],[2,"17:00","18:00","小学生"],[3,"18:00","19:00","小学生高学年〜中学生",true]]}
-  };
+    dance:{ja:"キッズダンス",sub:"3〜15歳・¥500",fee:"¥500",t:[[2,"16:00","16:45","園児"],[2,"17:00","18:00","小学生"],[3,"18:00","19:00","小学生高学年〜中学生",1]]}};
   var order=["kick","pil","fit","tt","dance"], W="日月火水木金土";
-  var st={c:"kick",d:null,s:null};
+  var D=null, online=false, st={c:"kick",d:null,s:null}, token="";
   var $=function(id){return document.getElementById(id)};
-  function closed(dt){var m=dt.getMonth()+1,d=dt.getDate();return (m===12&&d>=28)||(m===1&&d<=4)}
-  function days(){var out=[],t=new Date();t.setHours(0,0,0,0);for(var i=1;i<=14;i++){var x=new Date(t);x.setDate(t.getDate()+i);out.push(x)}return out}
-  function slotsFor(c,dt){return C[c].t.filter(function(s){return s[0]===dt.getDay()&&!closed(dt)})}
-  function fmt(dt){return (dt.getMonth()+1)+"月"+dt.getDate()+"日（"+W[dt.getDay()]+"）"}
+  function iso(x){return x.getFullYear()+"-"+("0"+(x.getMonth()+1)).slice(-2)+"-"+("0"+x.getDate()).slice(-2)}
+  function fromFallback(){var out={},t=new Date();t.setHours(0,0,0,0);
+    order.forEach(function(k){var c=FB[k],sl=[];for(var i=1;i<=14;i++){var x=new Date(t);x.setDate(t.getDate()+i);var m=x.getMonth()+1,dd=x.getDate();if((m===12&&dd>=28)||(m===1&&dd<=4))continue;
+      c.t.forEach(function(s){if(s[0]===x.getDay())sl.push({date:iso(x),start:s[1],end:s[2],label:s[3]||"",left:s[4]?0:3})})}
+      out[k]={ja:c.ja,sub:c.sub,fee:c.fee,slots:sl}});return out}
+  function dObj(ds){var p=ds.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+  function fmt(ds){var x=dObj(ds);return (x.getMonth()+1)+"月"+x.getDate()+"日（"+W[x.getDay()]+"）"}
+  function dates(){var t=new Date();t.setHours(0,0,0,0);var a=[];for(var i=1;i<=14;i++){var x=new Date(t);x.setDate(t.getDate()+i);a.push(iso(x))}return a}
+  function slotsOn(c,ds){return D[c].slots.filter(function(s){return s.date===ds})}
   function render(){
-    $("classes").innerHTML=order.map(function(k){return '<button type="button" class="chip" data-c="'+k+'" aria-pressed="'+(st.c===k)+'">'+C[k].ja+'<small>'+C[k].sub+'</small></button>'}).join("");
-    var ds=days();
-    if(!st.d||!slotsFor(st.c,st.d).length){st.d=null;for(var i=0;i<ds.length;i++){if(slotsFor(st.c,ds[i]).length){st.d=ds[i];break}}st.s=null}
-    $("days").innerHTML=ds.map(function(x,i){var has=slotsFor(st.c,x).length>0,on=st.d&&x.getTime()===st.d.getTime();return '<button type="button" class="day'+(x.getDay()===0?' sun':'')+'" data-i="'+i+'" aria-pressed="'+on+'"'+(has?'':' disabled')+'><b>'+x.getDate()+'</b><span>'+W[x.getDay()]+'</span></button>'}).join("");
-    var sl=st.d?slotsFor(st.c,st.d):[];
-    $("slots").innerHTML=sl.length?sl.map(function(s,i){var full=!!s[4],on=st.s===i;return '<button type="button" class="slot'+(full?' full':'')+'" data-s="'+i+'" aria-pressed="'+on+'"'+(full?' aria-disabled="true"':'')+'><b>'+s[1]+'〜'+s[2]+'</b><span>'+(full?'満席':(s[3]||C[st.c].ja))+'</span></button>'}).join(""):'<p class="empty">この2週間に空きがありません</p>';
+    $("classes").innerHTML=order.map(function(k){return '<button type="button" class="chip" data-c="'+k+'" aria-pressed="'+(st.c===k)+'">'+D[k].ja+'<small>'+D[k].sub+'</small></button>'}).join("");
+    var ds=dates();
+    if(!st.d||!slotsOn(st.c,st.d).length){st.d=null;for(var i=0;i<ds.length;i++){if(slotsOn(st.c,ds[i]).some(function(s){return s.left>0})){st.d=ds[i];break}}st.s=null}
+    $("days").innerHTML=ds.map(function(x){var has=slotsOn(st.c,x).some(function(s){return s.left>0}),dw=dObj(x).getDay();return '<button type="button" class="day'+(dw===0?' sun':'')+'" data-d="'+x+'" aria-pressed="'+(st.d===x)+'"'+(has?'':' disabled')+'><b>'+dObj(x).getDate()+'</b><span>'+W[dw]+'</span></button>'}).join("");
+    var sl=st.d?slotsOn(st.c,st.d):[];
+    $("slots").innerHTML=sl.length?sl.map(function(s,i){var full=s.left<=0,on=st.s===i;return '<button type="button" class="slot'+(full?' full':'')+'" data-s="'+i+'" aria-pressed="'+on+'"'+(full?' aria-disabled="true"':'')+'><b>'+s.start+'〜'+s.end+'</b><span>'+(full?'満席':((s.label||D[st.c].ja)+(s.left<=2?'・残り'+s.left+'名':'')))+'</span></button>'}).join(""):'<p class="empty">この2週間に空きがありません</p>';
     var s=(st.d&&st.s!==null)?sl[st.s]:null;
-    $("sum").textContent=s?(C[st.c].ja+"　"+fmt(st.d)+" "+s[1]+"〜"+s[2]+"　料金："+C[st.c].fee):"クラス・日にち・時間をえらんでください";
+    $("sum").textContent=s?(D[st.c].ja+"　"+fmt(st.d)+" "+s.start+"〜"+s.end+"　料金："+D[st.c].fee):"クラス・日にち・時間をえらんでください";
     $("go").setAttribute("aria-disabled",s?"false":"true");
-    var ds2=ds;$("days").onclick=function(e){var b=e.target.closest(".day");if(!b||b.disabled)return;st.d=ds2[+b.dataset.i];st.s=null;render()};
   }
+  $("days").onclick=function(e){var b=e.target.closest(".day");if(!b||b.disabled)return;st.d=b.dataset.d;st.s=null;render()};
   $("classes").onclick=function(e){var b=e.target.closest(".chip");if(!b)return;st.c=b.dataset.c;st.s=null;render()};
   $("slots").onclick=function(e){var b=e.target.closest(".slot");if(!b||b.classList.contains("full"))return;st.s=+b.dataset.s;render()};
+  var ERR={slot:"この時間は予約できません。別の時間をえらんでください",full:"満席になりました。別の時間をえらんでください",fields:"お名前・電話番号・メールアドレスを正しく入力してください",rate:"しばらくしてからもう一度お試しください",date:"日にちをえらび直してください"};
   $("f").addEventListener("submit",function(e){
-    e.preventDefault();var err=$("err");
-    if($("go").getAttribute("aria-disabled")==="true"){err.textContent="先に時間をえらんでください";err.hidden=false;return}
+    e.preventDefault();var err=$("err");function show(t){err.textContent=t;err.hidden=false}
+    var go=$("go");
+    if(go.getAttribute("aria-disabled")==="true"){show("先に時間をえらんでください");return}
     var nm=$("nm").value.trim(),ph=$("ph").value.replace(/[^\d+]/g,""),em=$("em").value.trim();
-    if(!nm||ph.length<10||!/^\S+@\S+\.\S+$/.test(em)){err.textContent="お名前・電話番号・メールアドレスを正しく入力してください";err.hidden=false;return}
-    err.hidden=true;var s=slotsFor(st.c,st.d)[st.s];var what=C[st.c].ja+"　"+fmt(st.d)+" "+s[1]+"〜"+s[2];
-    $("done-what").textContent=what;$("done-mail").textContent=em;
-    $("m-name").textContent=nm;$("m-what").textContent=what;
-    $("stage-pick").hidden=true;$("stage-done").hidden=false;
+    if(!nm||ph.length<10||!/^\S+@\S+\.\S+$/.test(em)){show(ERR.fields);return}
+    err.hidden=true;var s=slotsOn(st.c,st.d)[st.s];
+    var body={c:st.c,date:st.d,start:s.start,name:nm,phone:ph,email:em,note:$("ms").value.trim(),t:token,website:$("hp").value};
+    function done(what){$("done-what").textContent=what;$("done-mail").textContent=em;$("stage-pick").hidden=true;$("stage-done").hidden=false;window.scrollTo(0,$("bk").getBoundingClientRect().top+window.scrollY-10)}
+    function reset(){go.textContent="この内容で予約する"}
+    if(!online){show("ただいま予約を受け付けられません。少し時間をおいてお試しください");return}
+    go.setAttribute("aria-disabled","true");go.textContent="送信中…";
+    fetch(API+"/book",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
+      .then(function(r){return r.json()}).then(function(j){reset();
+        if(j.ok){done(j.what);load()}else{show(ERR[j.err]||"送信できませんでした。もう一度お試しください");if(j.err==="full"||j.err==="slot"){st.s=null;load()}else go.setAttribute("aria-disabled","false")}})
+      .catch(function(){reset();go.setAttribute("aria-disabled","false");show("通信エラーです。電波のよい場所でもう一度お試しください")});
   });
   $("again").onclick=function(){$("stage-done").hidden=true;$("stage-pick").hidden=false;st.s=null;render()};
-  // timetable table
-  var rows=[];order.forEach(function(k){C[k].t.forEach(function(s){rows.push([s[0],s[1],s[2],C[k].ja+(s[3]?"（"+s[3]+"）":"")])})});
-  rows.sort(function(a,b){var da=(a[0]+6)%7,db=(b[0]+6)%7;return da-db||a[1].localeCompare(b[1])});
-  $("tt").innerHTML="<tr><th>曜日</th><th>時間</th><th>クラス</th></tr>"+rows.map(function(r){return "<tr><td>"+W[r[0]]+"</td><td>"+r[1]+"〜"+r[2]+"</td><td>"+r[3]+"</td></tr>"}).join("");
-  // tabs
+  function table(){var rows=[];order.forEach(function(k){FB[k].t.forEach(function(s){rows.push([s[0],s[1],s[2],FB[k].ja+(s[3]?"（"+s[3]+"）":"")])})});
+    rows.sort(function(a,b){return ((a[0]+6)%7)-((b[0]+6)%7)||a[1].localeCompare(b[1])});
+    $("tt").innerHTML="<tr><th>曜日</th><th>時間</th><th>クラス</th></tr>"+rows.map(function(r){return "<tr><td>"+W[r[0]]+"</td><td>"+r[1]+"〜"+r[2]+"</td><td>"+r[3]+"</td></tr>"}).join("")}
   var tabs=["price","time","acc"];
   tabs.forEach(function(t){$("t-"+t).onclick=function(){tabs.forEach(function(u){$("t-"+u).setAttribute("aria-selected",u===t);$("p-"+u).hidden=u!==t})}});
-  // copy
   document.addEventListener("click",function(e){var b=e.target.closest(".copy");if(!b)return;var v=b.dataset.copy;
     try{navigator.clipboard.writeText(v).then(function(){b.textContent="コピーしました"},function(){b.textContent=v})}catch(x){b.textContent=v}});
-  // demo view switch
   function view(m){$("page").hidden=m;$("mail").hidden=!m;$("v-page").setAttribute("aria-pressed",!m);$("v-mail").setAttribute("aria-pressed",m)}
   $("v-page").onclick=function(){view(false)};$("v-mail").onclick=function(){view(true)};
-  render();
+  function load(){return fetch(API+"/slots").then(function(r){return r.json()}).then(function(j){D=j;online=true;render()}).catch(function(){if(!D){D=fromFallback();render()}})}
+  var q=new URLSearchParams(location.search);token=(q.get("t")||"").slice(0,40);if(FB[q.get("c")])st.c=q.get("c");
+  D=fromFallback();render();table();load();
+  if(token){fetch(API+"/invite/"+encodeURIComponent(token)).then(function(r){return r.json()}).then(function(j){if(!j.ok)return;
+    if(j.name&&!$("nm").value)$("nm").value=j.name;if(j.phone&&!$("ph").value)$("ph").value=j.phone;if(j.email&&!$("em").value)$("em").value=j.email;
+    if(j.c&&FB[j.c]&&!q.get("c")){st.c=j.c;st.s=null;render()}}).catch(function(){})}
 })();
 </script>
 
